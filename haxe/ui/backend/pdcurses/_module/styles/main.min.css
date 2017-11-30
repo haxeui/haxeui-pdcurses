@@ -1,0 +1,55 @@
+*{border:none!important;}
+.box,.vbox,.hbox,.absolute,.continuoushbox,.hgrid,.vgrid,.grid{spacing:1px!important;}
+.button{padding:1px 3px!important;__filter:drop-shadow;background-color:#888888!important;color:#FFFFFF!important;}
+.button:hover{background-color:#C0C0C0!important;color:#000000!important;}
+.button:down{padding:1px 3px!important;background-color:#888888!important;color:#FFFFFF!important;}
+.hprogress{height:1px!important;background-color:#C0C0C0!important;padding:0px!important;}
+.hprogress .progress-value{height:1px!important;background-color:#000088!important;}
+.vprogress{width:1px!important;background-color:#C0C0C0!important;padding:0px!important;}
+.vprogress .progress-value{width:1px!important;background-color:#000088!important;}
+.hslider{height:3px!important;background-color:none!important;padding:0px!important;padding-left:1px;padding-right:1px;}
+.hslider .slider-value-background{height:1px!important;background-color:#C0C0C0!important;padding:0px!important;padding-left:1px;padding-right:1px;}
+.hslider .slider-value{height:1px!important;background-color:#000088!important;}
+.hslider .slider-button{width:2px!important;height:3px!important;}
+.vslider{width:3px!important;background-color:none!important;padding:0px!important;padding-top:1px;padding-bottom:1px;}
+.vslider .slider-value-background{width:1px!important;background-color:#C0C0C0!important;padding:0px!important;padding-top:1px;padding-bottom:1px;}
+.vslider .slider-value{width:1px!important;background-color:#000088!important;}
+.vslider .slider-button{width:3px!important;height:2px!important;}
+.checkbox{background-color:#FFFFFF!important;horizontal-spacing:1px!important;color:#888888!important;}
+.checkbox-value{background-color:#C0C0C0!important;width:1px!important;height:1px!important;}
+.checkbox-value:selected{icon:"ascii:219"!important;}
+.checkbox-label{background-color:none!important;color:red!important;}
+.optionbox{background-color:#FFFFFF!important;horizontal-spacing:1px!important;color:#888888!important;}
+.optionbox-value{background-color:#C0C0C0!important;width:1px!important;height:1px!important;}
+.optionbox-value:selected{icon:"ascii:219"!important;}
+.optionbox-label{background-color:none!important;color:red!important;}
+.scroll .button{width:1px!important;height:1px!important;icon:none!important;}
+.hscroll{height:1px!important;}
+.hscroll .button.thumb{height:1px!important;}
+.hscroll .button.thumb:down{background-color:#000088!important;}
+.hscroll .button.thumb:hover{background-color:#000088!important;}
+.hscroll .button.deinc{hidden:true!important;icon:""!important;}
+.hscroll .button.deinc:down{hidden:true!important;icon:""!important;}
+.hscroll .button.inc{hidden:true!important;icon:""!important;}
+.hscroll .button.inc:down{hidden:true!important;icon:""!important;}
+.vscroll{width:1px!important;}
+.vscroll .button.thumb{width:1px!important;}
+.vscroll .button.thumb:down{background-color:#000088!important;}
+.vscroll .button.thumb:hover{background-color:#000088!important;}
+.vscroll .button.deinc{hidden:true!important;icon:""!important;}
+.vscroll .button.deinc:down{hidden:true!important;icon:""!important;}
+.vscroll .button.inc{hidden:true!important;icon:""!important;}
+.vscroll .button.inc:down{hidden:true!important;icon:""!important;}
+.scrollview{padding:1px!important;border-width:1px!important;border-size:1px!important;background-color:#FFFFFF!important;}
+.scrollview .scrollview-contents{padding:0px!important;padding-right:1px!important;padding-bottom:1px!important;}
+.itemrenderer{padding:1px!important;}
+.listview{padding:1px!important;__background-color:red!important;}
+.listview .listview-contents{spacing:0!important;}
+.listview .itemrenderer.even{background-color:#FFFFFF!important;}
+.listview .itemrenderer.even .label{__background-color:#FFFFFF!important;}
+.listview .itemrenderer.odd{background-color:#C0C0C0!important;}
+.listview .itemrenderer.odd .label{__background-color:#C0C0C0!important;}
+.listview .itemrenderer.even:hover{background-color:#888888!important;}
+.listview .itemrenderer.odd:hover{background-color:#888888!important;}
+.listview .itemrenderer:selected{background-color:#000088!important;color:white!important;}
+
