@@ -30,6 +30,8 @@ class ColorHelper {
             case 0xFF0000:      n = Color.BRIGHT_RED;
             case 0x000088:      n = Color.BLUE;
             case 0x0000FF:      n = Color.BRIGHT_BLUE;
+            case 0x008800:      n = Color.GREEN;
+            case 0x00FF00:      n = Color.BRIGHT_GREEN;
             case 0x888888:      n = Color.GREY;
             case 0xC0C0C0:      n = Color.WHITE;
             case 0xFFFFFF:      n = Color.BRIGHT_WHITE;

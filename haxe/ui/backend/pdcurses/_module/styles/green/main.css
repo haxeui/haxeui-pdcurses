@@ -1,0 +1,318 @@
+
+/*
+TODO: remove all !important when moving to new css engine as they arent needed because of weighted include order
+*/
+
+.box, .vbox, .hbox, .absolute, .continuoushbox, .hgrid, .vgrid, .grid {
+    spacing: 1px !important;
+}
+
+
+.button {
+    border-width: 1px !important;
+    border-color: #008800 !important;
+    background-color: #000000 !important;
+    color: #008800 !important;
+}
+
+.button:hover {
+    border-width: 1px !important;
+    border-color: #00FF00 !important;
+    background-color: #000000 !important;
+    color: #00FF00 !important;
+}
+
+.hprogress {
+    height: 3px !important;
+    border-width: 1px !important;
+    border-color: #008800 !important;
+    background-color: #000000 !important;
+    padding: 1px !important;
+}
+
+.hprogress .progress-value {
+    height: 1px !important;
+    background-color: #00FF00 !important;
+}
+
+.vprogress {
+    width: 3px !important;
+    border-width: 1px !important;
+    border-color: #008800 !important;
+    background-color: #000000 !important;
+    padding: 1px !important;
+}
+
+.vprogress .progress-value {
+    width: 1px !important;
+    background-color: #00FF00 !important;
+}
+
+.hslider {
+    height: 3px !important;
+    border-width: 1px !important;
+    border-color: #008800 !important;
+    background-color: #000000 !important;
+    padding: 1px !important;
+    filter: none !important;
+}
+
+.hslider .slider-value-background {
+    height: 1px !important;
+    padding: 0px !important;
+    __padding-left: 1px;
+    __padding-right: 1px;
+    __hidden: true;
+    background-color: #000000 !important;
+    filter: none !important;
+}
+
+.hslider .slider-value {
+    height: 1px !important;
+    background-color: #00FF00 !important;
+    __hidden: true;
+}
+
+.hslider .slider-button {
+    __border: none !important;
+    width: 2px !important;
+    height: 3px !important;
+    __background-color: #008800 !important;
+    __hidden: true;
+}
+
+.vslider {
+    width: 3px !important;
+    border-width: 1px !important;
+    border-color: #008800 !important;
+    background-color: #000000 !important;
+    padding: 1px !important;
+    filter: none !important;
+}
+
+.vslider .slider-value-background {
+    width: 1px !important;
+    padding: 0px !important;
+    __padding-left: 1px;
+    __padding-right: 1px;
+    __hidden: true;
+    background-color: #000000 !important;
+    filter: none !important;
+}
+
+.vslider .slider-value {
+    width: 1px !important;
+    background-color: #00FF00 !important;
+}
+
+.vslider .slider-button {
+    width: 3px !important;
+    height: 2px !important;
+}
+
+.checkbox {
+    background-color: #000000 !important;
+    horizontal-spacing: 0px !important;
+    color: #008800 !important;
+}
+
+.checkbox-value {
+    border-width: 1px !important;
+    border-color: #008800 !important;
+    background-color: #000000 !important;
+    width: 3px !important;
+    height: 3px !important;
+    filter:none !important;
+}
+
+.checkbox-value:selected {
+    icon: "ascii:219" !important;
+    color: #00FF00 !important;
+}
+
+.checkbox-label {
+    background-color: none !important;
+    color: red !important;
+}
+
+.optionbox {
+    background-color: #000000 !important;
+    horizontal-spacing: 0px !important;
+    color: #008800 !important;
+}
+
+.optionbox-value {
+    border-width: 1px !important;
+    border-color: #008800 !important;
+    background-color: #000000 !important;
+    width: 3px !important;
+    height: 3px !important;
+    filter:none !important;
+}
+
+.optionbox-value:selected {
+    icon: "ascii:219" !important;
+    color: #00FF00 !important;
+}
+
+.optionbox-label {
+    background-color: none !important;
+    color: red !important;
+}
+
+
+
+
+
+.scroll .button {
+    width: 1px !important;
+    height: 1px !important;
+    icon: none !important;
+    border: none !important;
+}
+
+.hscroll {
+    height: 1px !important;
+    background-color: #008800 !important;
+}
+
+.hscroll .button.thumb {
+    height: 1px !important;
+    background-color: #00FF00 !important;
+}
+
+.hscroll .button.thumb:down {
+    background-color: #00FF00 !important;
+}
+
+.hscroll .button.thumb:hover {
+    background-color: #00FF00 !important;
+}
+
+.hscroll .button.deinc {
+    hidden: true !important;
+    icon: "" !important;
+}
+
+.hscroll .button.deinc:down {
+    hidden: true !important;
+    icon: "" !important;
+}
+
+.hscroll .button.inc {
+    hidden: true !important;
+    icon: "" !important;
+}
+
+.hscroll .button.inc:down {
+    hidden: true !important;
+    icon: "" !important;
+}
+
+
+
+.vscroll {
+    width: 1px !important;
+    background-color: #008800 !important;
+}
+
+.vscroll .button.thumb {
+    width: 1px !important;
+    background-color: #00FF00 !important;
+}
+
+.vscroll .button.thumb:down {
+    background-color: #00FF00 !important;
+}
+
+.vscroll .button.thumb:hover {
+    background-color: #00FF00 !important;
+}
+
+.vscroll .button.deinc {
+    hidden: true !important;
+    icon: "" !important;
+}
+
+.vscroll .button.deinc:down {
+    hidden: true !important;
+    icon: "" !important;
+}
+
+.vscroll .button.inc {
+    hidden: true !important;
+    icon: "" !important;
+}
+
+.vscroll .button.inc:down {
+    hidden: true !important;
+    icon: "" !important;
+}
+
+
+
+
+.scrollview {
+    padding: 1px !important;
+    border-width: 1px !important;
+    border-size: 1px !important;
+    background-color: #000000 !important;
+    border-color: #008800 !important;
+}
+
+.scrollview .scrollview-contents {
+    padding: 0px !important;
+    padding-right: 0px !important;
+    padding-bottom: 0px !important;
+}
+
+
+
+
+
+.itemrenderer {
+    padding: 1px !important;
+}
+
+.listview {
+    padding: 1px !important;
+    __background-color: red !important;
+}
+
+.listview .listview-contents {
+    spacing: 0 !important;
+}
+
+.listview .itemrenderer.even {
+    background-color: #000000 !important;
+}
+
+.listview .itemrenderer.even .label {
+    color: #008800 !important;
+}
+
+.listview .itemrenderer.even .label {
+    __background-color: #FFFFFF !important;
+}
+
+.listview .itemrenderer.odd {
+    background-color: #008800 !important;
+}
+
+.listview .itemrenderer.odd .label {
+    __background-color: #C0C0C0 !important;
+}
+
+
+.listview .itemrenderer.even:hover {
+    background-color: #888888 !important;
+}
+
+.listview .itemrenderer.odd:hover {
+    background-color: #888888 !important;
+}
+
+.listview .itemrenderer:selected {
+    background-color: #000088 !important;
+    color: white !important;
+}

@@ -118,6 +118,7 @@ class AppHelper {
     
     private function run() {
         var backgroundColor = Color.BRIGHT_WHITE;
+        var backgroundColor = Color.BLACK;
         PDCurses.wbkgd(PDCurses.stdscr, PDCurses.COLOR_PAIR(ColorHelper.getColor(backgroundColor, backgroundColor)));
         var overWindows:Array<Window> = [];
         

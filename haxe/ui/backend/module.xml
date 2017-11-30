@@ -7,5 +7,8 @@
         <global>
             <style resource="styles/main.css" />
         </global>
+        <green parent="default">
+            <style resource="styles/green/main.css" />
+        </green>
     </themes>
 </module>

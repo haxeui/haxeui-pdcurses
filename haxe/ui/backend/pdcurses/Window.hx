@@ -178,7 +178,7 @@ class Window {
             drawParams.color = ColorHelper.getColor(backgroundColor, backgroundColor);
             
             if (_c.style.borderLeftSize != null) {
-                drawParams.color = ColorHelper.getColor(Color.WHITE, backgroundColor);
+                drawParams.color = ColorHelper.getColor(ColorHelper.approximateColor(_c.style.borderLeftColor), backgroundColor);
                 drawParams.borderType = BorderType.THIN;
             }
             
@@ -220,10 +220,14 @@ class Window {
         if (_c != null && _c.style != null) {
             if (_c.style.icon != null) {
                 
-                var textBackgroundColor = backgroundColor;
-                var textColor:Int = Color.BLUE;
+                var textBackgroundColor = ColorHelper.approximateColor(_c.style.backgroundColor);
+                var textColor:Int = ColorHelper.approximateColor(_c.style.color);
                 var cx:Int = xpos;
                 var cy:Int = ypos;
+                if (_c.style.borderLeftSize != null) {
+                    cx++;
+                    cy++;
+                }
                 var icon = _c.style.icon;
                 if (StringTools.startsWith(icon, "ascii:")) {
                     icon = StringTools.replace(icon, "ascii:", "");
