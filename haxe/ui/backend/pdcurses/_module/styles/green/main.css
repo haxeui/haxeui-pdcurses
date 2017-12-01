@@ -50,7 +50,7 @@ TODO: remove all !important when moving to new css engine as they arent needed b
 
 .hslider {
     height: 3px !important;
-    border-width: 1px !important;
+    __border-width: 1px !important;
     border-color: #008800 !important;
     background-color: #000000 !important;
     padding: 1px !important;
@@ -83,7 +83,7 @@ TODO: remove all !important when moving to new css engine as they arent needed b
 
 .vslider {
     width: 3px !important;
-    border-width: 1px !important;
+    __border-width: 1px !important;
     border-color: #008800 !important;
     background-color: #000000 !important;
     padding: 1px !important;
