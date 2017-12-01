@@ -2,22 +2,23 @@ package haxe.ui.backend.pdcurses;
 
 import haxe.ui.backend.pdcurses.DrawParams.BorderEffect;
 import haxe.ui.backend.pdcurses.DrawParams.BorderType;
+import haxe.ui.backend.pdcurses.lib.Chars;
 import haxe.ui.backend.pdcurses.lib.PDCurses;
 import haxe.ui.util.Rectangle;
 
 class CornerChars {
-    public var TOP_LEFT:Int = 218;
-    public var TOP:Int = 196;
-    public var TOP_RIGHT:Int = 191;
+    public var TOP_LEFT:Int = Chars.ULCORNER;
+    public var TOP:Int = Chars.HLINE;
+    public var TOP_RIGHT:Int = Chars.URCORNER;
     
-    public var LEFT:Int = 179;
+    public var LEFT:Int = Chars.VLINE;
 //    public var MIDDLE:Int = 219;
-    public var MIDDLE:Int = 32;
-    public var RIGHT:Int = 179;
+    public var MIDDLE:Int = ' '.charCodeAt(0);
+    public var RIGHT:Int = Chars.VLINE;
     
-    public var BOTTOM_LEFT:Int = 192;
-    public var BOTTOM:Int = 196;
-    public var BOTTOM_RIGHT:Int = 217;
+    public var BOTTOM_LEFT:Int = Chars.LLCORNER;
+    public var BOTTOM:Int = Chars.HLINE;
+    public var BOTTOM_RIGHT:Int = Chars.LRCORNER;
     
     public function new() {
     }
@@ -32,7 +33,7 @@ class DrawHelper {
         var corners = cornerChars(drawParams.borderType);
         
         if (drawParams.backgroundChar != null) {
-            corners.MIDDLE = StringTools.fastCodeAt(drawParams.backgroundChar, 0);
+            corners.MIDDLE = drawParams.backgroundChar;
             if (drawParams.borderType == BorderType.NONE) {
                 corners.TOP_LEFT = corners.MIDDLE;
                 corners.TOP = corners.MIDDLE;
@@ -99,50 +100,65 @@ class DrawHelper {
         
         switch(borderType) {
             case BorderType.NONE:
-                corners.TOP_LEFT = 219;
-                corners.TOP = 219;
-                corners.TOP_RIGHT = 219;
-                corners.LEFT = 219;
-                corners.MIDDLE = 219;
-                corners.RIGHT = 219;
-                corners.BOTTOM_LEFT = 219;
-                corners.BOTTOM = 219;
-                corners.BOTTOM_RIGHT = 219;
-                
+                corners.TOP_LEFT = Chars.BLOCK;
+                corners.TOP = Chars.BLOCK;
+                corners.TOP_RIGHT = Chars.BLOCK;
+                corners.LEFT = Chars.BLOCK;
+                corners.MIDDLE = Chars.BLOCK;
+                corners.RIGHT = Chars.BLOCK;
+                corners.BOTTOM_LEFT = Chars.BLOCK;
+                corners.BOTTOM = Chars.BLOCK;
+                corners.BOTTOM_RIGHT = Chars.BLOCK;
+               
             case BorderType.THIN:
-                corners.TOP_LEFT = 218;
-                corners.TOP = 196;
-                corners.TOP_RIGHT = 191;
-                corners.LEFT = 179;
-                corners.MIDDLE = 32;
-                corners.RIGHT = 179;
-                corners.BOTTOM_LEFT = 192;
-                corners.BOTTOM = 196;
-                corners.BOTTOM_RIGHT = 217;
-                
-            case BorderType.DOUBLE:
-                corners.TOP_LEFT = 201;
-                corners.TOP = 205;
-                corners.TOP_RIGHT = 187;
-                corners.LEFT = 186;
-                corners.MIDDLE = 32;
-                corners.RIGHT = 186;
-                corners.BOTTOM_LEFT = 200;
-                corners.BOTTOM = 205;
-                corners.BOTTOM_RIGHT = 188;
+                corners.TOP_LEFT = Chars.ULCORNER;
+                corners.TOP = Chars.HLINE;
+                corners.TOP_RIGHT = Chars.URCORNER;
+                corners.LEFT = Chars.VLINE;
+                corners.MIDDLE = ' '.charCodeAt(0);
+                corners.RIGHT = Chars.VLINE;
+                corners.BOTTOM_LEFT = Chars.LLCORNER;
+                corners.BOTTOM = Chars.HLINE;
+                corners.BOTTOM_RIGHT = Chars.LRCORNER;
                 
             case BorderType.THICK:
-                corners.TOP_LEFT = 219;
-                corners.TOP = 219;
-                corners.TOP_RIGHT = 219;
-                corners.LEFT = 219;
-                corners.MIDDLE = 32;
-                corners.RIGHT = 219;
-                corners.BOTTOM_LEFT = 219;
-                corners.BOTTOM = 219;
-                corners.BOTTOM_RIGHT = 219;
+                corners.TOP_LEFT = Chars.BLOCK;
+                corners.TOP = Chars.BLOCK;
+                corners.TOP_RIGHT = Chars.BLOCK;
+                corners.LEFT = Chars.BLOCK;
+                corners.MIDDLE = ' '.charCodeAt(0);
+                corners.RIGHT = Chars.BLOCK;
+                corners.BOTTOM_LEFT = Chars.BLOCK;
+                corners.BOTTOM =Chars.BLOCK;
+                corners.BOTTOM_RIGHT = Chars.BLOCK;
         }
         
         return corners;
+    }
+    
+    public static function getAscii(s:String) {
+        switch (s.toUpperCase()) {
+            case "VLINE":           return Chars.VLINE;
+            case "HLINE":           return Chars.HLINE;
+            case "ULCORNER":        return Chars.ULCORNER;
+            case "LLCORNER":        return Chars.LLCORNER;
+            case "URCORNER":        return Chars.URCORNER;
+            case "LRCORNER":        return Chars.LRCORNER;
+            case "RTEE":            return Chars.RTEE;
+            case "LTEE":            return Chars.LTEE;
+            case "BTEE":            return Chars.BTEE;
+            case "TTEE":            return Chars.TTEE;
+            case "PLUS":            return Chars.PLUS;
+            case "LARROW":          return Chars.LARROW;
+            case "RARROW":          return Chars.RARROW;
+            case "DARROW":          return Chars.DARROW;
+            case "UARROW":          return Chars.UARROW;
+            case "BLOCK":           return Chars.BLOCK;
+            case "BOARD":           return Chars.BOARD;
+            case "CKBOARD":         return Chars.CKBOARD;
+            case "DIAMOND":         return Chars.DIAMOND;
+            case "LANTERN":         return Chars.LANTERN;
+        }
+        return s.charCodeAt(0);
     }
 }

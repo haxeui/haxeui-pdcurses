@@ -238,7 +238,7 @@ class Window {
                 var icon = getAscii(_c.style.icon);
                 //var textColor:Int = ColorHelper.approximateColor(_c.getTextDisplay().textStyle.color);
                 PDCurses.attrset(PDCurses.COLOR_PAIR(ColorHelper.getColor(textColor, textBackgroundColor)));
-                PDCurses.mvaddstr(cy, cx, icon); 
+                PDCurses.mvaddch(cy, cx, icon); 
             }
         }
         
@@ -247,11 +247,12 @@ class Window {
         }
     }
     
-    private function getAscii(s:String):String {
+    private function getAscii(s:String):Int {
+        var n = 0;
         if (StringTools.startsWith(s, "ascii:")) {
             s = StringTools.replace(s, "ascii:", "");
-            s = String.fromCharCode(Std.parseInt(s));
+            n = DrawHelper.getAscii(s);
         }
-        return s;
+        return n;
     }
 }

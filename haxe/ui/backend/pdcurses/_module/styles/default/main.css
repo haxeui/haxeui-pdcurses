@@ -15,6 +15,7 @@ TODO: remove all !important when moving to new css engine as they arent needed b
     border-color: #C0C0C0 !important;
     background-color: #000000 !important;
     color: #C0C0C0 !important;
+    padding: 1px 3px !important;
 }
 
 .button:hover {
@@ -37,7 +38,7 @@ TODO: remove all !important when moving to new css engine as they arent needed b
     border-color: #C0C0C0 !important;
     background-color: #000000 !important;
     padding: 1px !important;
-    background-image: "ascii:176";
+    background-image: "ascii:BOARD";
 }
 
 .hprogress .progress-value {
@@ -51,7 +52,7 @@ TODO: remove all !important when moving to new css engine as they arent needed b
     border-color: #C0C0C0 !important;
     background-color: #000000 !important;
     padding: 1px !important;
-    background-image: "ascii:176";
+    background-image: "ascii:BOARD";
 }
 
 .vprogress .progress-value {
@@ -74,8 +75,9 @@ TODO: remove all !important when moving to new css engine as they arent needed b
     height: 1px !important;
     padding: 0px !important;
     background-color: #000000 !important;
-    background-image: "ascii:176" !important;
+    background-image: "ascii:BOARD" !important;
     color: #C0C0C0 !important;
+    border: none !important;
 }
 
 .hslider .slider-value {
@@ -104,8 +106,9 @@ TODO: remove all !important when moving to new css engine as they arent needed b
     width: 1px !important;
     padding: 0px !important;
     background-color: #000000 !important;
-    background-image: "ascii:176" !important;
+    background-image: "ascii:BOARD" !important;
     color: #C0C0C0 !important;
+    border: none !important;
 }
 
 .vslider .slider-value {
@@ -138,7 +141,7 @@ TODO: remove all !important when moving to new css engine as they arent needed b
 }
 
 .checkbox-value:selected {
-    icon: "ascii:219" !important;
+    icon: "ascii:BLOCK" !important;
     color: #FFFFFF !important;
 }
 
@@ -164,7 +167,7 @@ TODO: remove all !important when moving to new css engine as they arent needed b
 }
 
 .optionbox-value:selected {
-    icon: "ascii:219" !important;
+    icon: "ascii:DIAMOND" !important;
     color: #FFFFFF !important;
 }
 
@@ -186,13 +189,14 @@ TODO: remove all !important when moving to new css engine as they arent needed b
     height: 1px !important;
     icon: none !important;
     border: none !important;
+    background-color: #C0C0C0 !important;
 }
 
 .hscroll {
     height: 1px !important;
     background-color: #000000 !important;
     color: #C0C0C0 !important;
-    background-image: "ascii:176" !important;
+    background-image: "ascii:BOARD" !important;
 }
 
 .hscroll .button.thumb {
@@ -209,23 +213,31 @@ TODO: remove all !important when moving to new css engine as they arent needed b
 }
 
 .hscroll .button.deinc {
-    hidden: true !important;
-    icon: "" !important;
+    icon: "ascii:LARROW" !important;
+    color: #000000 !important;
+}
+
+.hscroll .button.deinc:hover {
+    background-color: #FFFFFF !important;
 }
 
 .hscroll .button.deinc:down {
-    hidden: true !important;
-    icon: "" !important;
+    background-color: #888888 !important;
+    color: #FFFFFF !important;
 }
 
 .hscroll .button.inc {
-    hidden: true !important;
-    icon: "" !important;
+    icon: "ascii:RARROW" !important;
+    color: #000000 !important;
+}
+
+.hscroll .button.inc:hover {
+    background-color: #FFFFFF !important;
 }
 
 .hscroll .button.inc:down {
-    hidden: true !important;
-    icon: "" !important;
+    background-color: #888888 !important;
+    color: #FFFFFF !important;
 }
 
 
@@ -234,7 +246,7 @@ TODO: remove all !important when moving to new css engine as they arent needed b
     width: 1px !important;
     background-color: #000000 !important;
     color: #C0C0C0 !important;
-    background-image: "ascii:176" !important;
+    background-image: "ascii:BOARD" !important;
 }
 
 .vscroll .button.thumb {
@@ -251,23 +263,31 @@ TODO: remove all !important when moving to new css engine as they arent needed b
 }
 
 .vscroll .button.deinc {
-    hidden: true !important;
-    icon: "" !important;
+    icon: "ascii:UARROW" !important;
+    color: #000000 !important;
+}
+
+.vscroll .button.deinc:hover {
+    background-color: #FFFFFF !important;
 }
 
 .vscroll .button.deinc:down {
-    hidden: true !important;
-    icon: "" !important;
+    background-color: #888888 !important;
+    color: #FFFFFF !important;
 }
 
 .vscroll .button.inc {
-    hidden: true !important;
-    icon: "" !important;
+    icon: "ascii:DARROW" !important;
+    color: #000000 !important;
+}
+
+.vscroll .button.inc:hover {
+    background-color: #FFFFFF !important;
 }
 
 .vscroll .button.inc:down {
-    hidden: true !important;
-    icon: "" !important;
+    background-color: #888888 !important;
+    color: #FFFFFF !important;
 }
 
 

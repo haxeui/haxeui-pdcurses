@@ -4,8 +4,7 @@ package haxe.ui.backend.pdcurses;
 abstract BorderType(Int) from Int to Int {
     var NONE = 0;
     var THIN = 1;
-    var DOUBLE = 2;
-    var THICK = 3;
+    var THICK = 2;
 }
 
 @:enum
@@ -24,7 +23,7 @@ class DrawParams {
     public var shadow:Bool = false;
     public var shadowColor:Int = 0;
     
-    public var backgroundChar:String;
+    public var backgroundChar:Null<Int> = null;
     
     public function new() {
         
