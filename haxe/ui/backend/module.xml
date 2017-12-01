@@ -7,6 +7,9 @@
         <global>
             <style resource="styles/main.css" />
         </global>
+        <default>
+            <style resource="styles/default/main.css" />
+        </default>
         <green parent="default">
             <style resource="styles/green/main.css" />
         </green>

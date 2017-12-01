@@ -174,12 +174,19 @@ class Window {
         
         if (backgroundColor != -1) {
             var drawParams = new DrawParams();
-            drawParams.shadow = shadow;
+            drawParams.shadow = false;
             drawParams.color = ColorHelper.getColor(backgroundColor, backgroundColor);
+            
+            if (_c.style.backgroundImage != null) {
+                drawParams.backgroundChar = getAscii(_c.style.backgroundImage);
+            }
+            
             
             if (_c.style.borderLeftSize != null) {
                 drawParams.color = ColorHelper.getColor(ColorHelper.approximateColor(_c.style.borderLeftColor), backgroundColor);
                 drawParams.borderType = BorderType.THIN;
+            } else if (_c.style.color != null) {
+                drawParams.color = ColorHelper.getColor(ColorHelper.approximateColor(_c.style.color), backgroundColor);
             }
             
             DrawHelper.box(xpos, ypos, _w, _h, drawParams, clipRect);
@@ -228,11 +235,7 @@ class Window {
                     cx++;
                     cy++;
                 }
-                var icon = _c.style.icon;
-                if (StringTools.startsWith(icon, "ascii:")) {
-                    icon = StringTools.replace(icon, "ascii:", "");
-                    icon = String.fromCharCode(Std.parseInt(icon));
-                }
+                var icon = getAscii(_c.style.icon);
                 //var textColor:Int = ColorHelper.approximateColor(_c.getTextDisplay().textStyle.color);
                 PDCurses.attrset(PDCurses.COLOR_PAIR(ColorHelper.getColor(textColor, textBackgroundColor)));
                 PDCurses.mvaddstr(cy, cx, icon); 
@@ -242,5 +245,13 @@ class Window {
         for (c in children) {
             c.redraw(clipRect);
         }
+    }
+    
+    private function getAscii(s:String):String {
+        if (StringTools.startsWith(s, "ascii:")) {
+            s = StringTools.replace(s, "ascii:", "");
+            s = String.fromCharCode(Std.parseInt(s));
+        }
+        return s;
     }
 }

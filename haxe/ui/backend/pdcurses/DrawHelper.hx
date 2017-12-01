@@ -31,6 +31,20 @@ class DrawHelper {
         
         var corners = cornerChars(drawParams.borderType);
         
+        if (drawParams.backgroundChar != null) {
+            corners.MIDDLE = StringTools.fastCodeAt(drawParams.backgroundChar, 0);
+            if (drawParams.borderType == BorderType.NONE) {
+                corners.TOP_LEFT = corners.MIDDLE;
+                corners.TOP = corners.MIDDLE;
+                corners.TOP_RIGHT = corners.MIDDLE;
+                corners.LEFT = corners.MIDDLE;
+                corners.RIGHT = corners.MIDDLE;
+                corners.BOTTOM_LEFT = corners.MIDDLE;
+                corners.BOTTOM = corners.MIDDLE;
+                corners.BOTTOM_RIGHT = corners.MIDDLE;
+            }
+        }
+        
         if (drawParams.borderEffect == BorderEffect.NONE) {
             PDCurses.attrset(PDCurses.COLOR_PAIR(drawParams.color));
         }

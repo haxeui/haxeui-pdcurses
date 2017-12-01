@@ -1,0 +1,330 @@
+/*
+TODO: remove all !important when moving to new css engine as they arent needed because of weighted include order
+*/
+
+* {
+    filter: none !important;
+}
+
+.box, .vbox, .hbox, .absolute, .continuoushbox, .hgrid, .vgrid, .grid {
+    spacing: 1px !important;
+}
+
+.button {
+    border-width: 1px !important;
+    border-color: #C0C0C0 !important;
+    background-color: #000000 !important;
+    color: #C0C0C0 !important;
+}
+
+.button:hover {
+    border-width: 1px !important;
+    border-color: #FFFFFF !important;
+    background-color: #000000 !important;
+    color: #FFFFFF !important;
+}
+
+.button:down {
+    border-width: 1px !important;
+    border-color: #C0C0C0 !important;
+    background-color: #000000 !important;
+    color: #C0C0C0 !important;
+}
+
+.hprogress {
+    height: 3px !important;
+    border-width: 1px !important;
+    border-color: #C0C0C0 !important;
+    background-color: #000000 !important;
+    padding: 1px !important;
+    background-image: "ascii:176";
+}
+
+.hprogress .progress-value {
+    height: 1px !important;
+    background-color: #FFFFFF !important;
+}
+
+.vprogress {
+    width: 3px !important;
+    border-width: 1px !important;
+    border-color: #C0C0C0 !important;
+    background-color: #000000 !important;
+    padding: 1px !important;
+    background-image: "ascii:176";
+}
+
+.vprogress .progress-value {
+    width: 1px !important;
+    background-color: #FFFFFF !important;
+}
+
+
+
+
+
+
+.hslider {
+    height: 3px !important;
+    background-color: #000000 !important;
+    padding: 1px !important;
+}
+
+.hslider .slider-value-background {
+    height: 1px !important;
+    padding: 0px !important;
+    background-color: #000000 !important;
+    background-image: "ascii:176" !important;
+    color: #C0C0C0 !important;
+}
+
+.hslider .slider-value {
+    height: 1px !important;
+    background-color: #FFFFFF !important;
+}
+
+.hslider .slider-button {
+    width: 2px !important;
+    height: 3px !important;
+}
+
+
+
+
+
+.vslider {
+    width: 3px !important;
+    border-color: #008800 !important;
+    background-color: #000000 !important;
+    padding: 1px !important;
+    filter: none !important;
+}
+
+.vslider .slider-value-background {
+    width: 1px !important;
+    padding: 0px !important;
+    background-color: #000000 !important;
+    background-image: "ascii:176" !important;
+    color: #C0C0C0 !important;
+}
+
+.vslider .slider-value {
+    width: 1px !important;
+    background-color: #FFFFFF !important;
+}
+
+.vslider .slider-button {
+    width: 3px !important;
+    height: 2px !important;
+}
+
+
+
+
+
+.checkbox {
+    background-color: #000000 !important;
+    border: 1px !important;
+    horizontal-spacing: 0px !important;
+    color: #C0C0C0 !important;
+}
+
+.checkbox-value {
+    border-width: 1px !important;
+    border-color: #C0C0C0 !important;
+    background-color: #000000 !important;
+    width: 3px !important;
+    height: 3px !important;
+}
+
+.checkbox-value:selected {
+    icon: "ascii:219" !important;
+    color: #FFFFFF !important;
+}
+
+.checkbox-label {
+    background-color: #000000 !important;
+    color: #C0C0C0 !important;
+}
+
+.optionbox {
+    background-color: #000000 !important;
+    border: 1px !important;
+    horizontal-spacing: 0px !important;
+    color: #C0C0C0 !important;
+}
+
+.optionbox-value {
+    border-width: 1px !important;
+    border-color: #C0C0C0 !important;
+    background-color: #000000 !important;
+    width: 3px !important;
+    height: 3px !important;
+    filter:none !important;
+}
+
+.optionbox-value:selected {
+    icon: "ascii:219" !important;
+    color: #FFFFFF !important;
+}
+
+.optionbox-label {
+    background-color: none !important;
+    color: red !important;
+}
+
+
+
+
+
+
+
+
+
+.scroll .button {
+    width: 1px !important;
+    height: 1px !important;
+    icon: none !important;
+    border: none !important;
+}
+
+.hscroll {
+    height: 1px !important;
+    background-color: #000000 !important;
+    color: #C0C0C0 !important;
+    background-image: "ascii:176" !important;
+}
+
+.hscroll .button.thumb {
+    height: 1px !important;
+    background-color: #C0C0C0 !important;
+}
+
+.hscroll .button.thumb:down {
+    background-color: #C0C0C0 !important;
+}
+
+.hscroll .button.thumb:hover {
+    background-color: #FFFFFF !important;
+}
+
+.hscroll .button.deinc {
+    hidden: true !important;
+    icon: "" !important;
+}
+
+.hscroll .button.deinc:down {
+    hidden: true !important;
+    icon: "" !important;
+}
+
+.hscroll .button.inc {
+    hidden: true !important;
+    icon: "" !important;
+}
+
+.hscroll .button.inc:down {
+    hidden: true !important;
+    icon: "" !important;
+}
+
+
+
+.vscroll {
+    width: 1px !important;
+    background-color: #000000 !important;
+    color: #C0C0C0 !important;
+    background-image: "ascii:176" !important;
+}
+
+.vscroll .button.thumb {
+    width: 1px !important;
+    background-color: #C0C0C0 !important;
+}
+
+.vscroll .button.thumb:down {
+    background-color: #C0C0C0 !important;
+}
+
+.vscroll .button.thumb:hover {
+    background-color: #FFFFFF !important;
+}
+
+.vscroll .button.deinc {
+    hidden: true !important;
+    icon: "" !important;
+}
+
+.vscroll .button.deinc:down {
+    hidden: true !important;
+    icon: "" !important;
+}
+
+.vscroll .button.inc {
+    hidden: true !important;
+    icon: "" !important;
+}
+
+.vscroll .button.inc:down {
+    hidden: true !important;
+    icon: "" !important;
+}
+
+
+.scrollview {
+    padding: 1px !important;
+    border-width: 1px !important;
+    border-size: 1px !important;
+    background-color: #000000 !important;
+    border-color: #C0C0C0 !important;
+}
+
+.scrollview .scrollview-contents {
+    padding: 0px !important;
+    padding-right: 0px !important;
+    padding-bottom: 0px !important;
+}
+
+.itemrenderer {
+    padding: 1px !important;
+}
+
+.listview {
+    padding: 1px !important;
+}
+
+.listview .listview-contents {
+    spacing: 0 !important;
+}
+
+.listview .itemrenderer.even {
+    background-color: #000000 !important;
+}
+
+.listview .itemrenderer.even .label {
+    color: #C0C0C0 !important;
+}
+
+.listview .itemrenderer.even .label {
+}
+
+.listview .itemrenderer.odd {
+    background-color: #888888 !important;
+}
+
+.listview .itemrenderer.odd .label {
+}
+
+
+.listview .itemrenderer.even:hover {
+    background-color: #C0C0C0 !important;
+}
+
+.listview .itemrenderer.odd:hover {
+    background-color: #888888 !important;
+}
+
+.listview .itemrenderer:selected {
+    background-color: #000088 !important;
+    color: white !important;
+}

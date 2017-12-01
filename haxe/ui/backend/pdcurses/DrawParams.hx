@@ -24,6 +24,8 @@ class DrawParams {
     public var shadow:Bool = false;
     public var shadowColor:Int = 0;
     
+    public var backgroundChar:String;
+    
     public function new() {
         
     }
