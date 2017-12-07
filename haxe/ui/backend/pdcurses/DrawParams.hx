@@ -5,6 +5,9 @@ abstract BorderType(Int) from Int to Int {
     var NONE = 0;
     var THIN = 1;
     var THICK = 2;
+    var TABBAR = 3;
+    var TABBAR_BUTTON = 4;
+    var TABBAR_BUTTON_SELECTED = 5;
 }
 
 @:enum

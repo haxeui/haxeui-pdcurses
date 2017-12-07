@@ -348,3 +348,16 @@ TODO: remove all !important when moving to new css engine as they arent needed b
     background-color: #000088 !important;
     color: white !important;
 }
+
+.tabbar {
+    padding-left: 1px !important;
+    padding-right: 1px !important;
+    border: 1px solid #C0C0C0 !important;
+    background-color: black !important;
+}
+
+.tabview .tabview-content {
+    border: 1px solid #C0C0C0 !important;
+    background-color: black !important;
+    padding: 1px !important;
+}

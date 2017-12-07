@@ -131,6 +131,39 @@ class DrawHelper {
                 corners.BOTTOM_LEFT = Chars.BLOCK;
                 corners.BOTTOM =Chars.BLOCK;
                 corners.BOTTOM_RIGHT = Chars.BLOCK;
+                
+            case BorderType.TABBAR:
+                corners.TOP_LEFT = ' '.charCodeAt(0);
+                corners.TOP = ' '.charCodeAt(0);
+                corners.TOP_RIGHT = ' '.charCodeAt(0);
+                corners.LEFT = ' '.charCodeAt(0);
+                corners.MIDDLE = ' '.charCodeAt(0);
+                corners.RIGHT = ' '.charCodeAt(0);
+                corners.BOTTOM_LEFT = Chars.ULCORNER;
+                corners.BOTTOM = Chars.HLINE;
+                corners.BOTTOM_RIGHT = Chars.URCORNER;
+                
+            case BorderType.TABBAR_BUTTON:
+                corners.TOP_LEFT = Chars.ULCORNER;
+                corners.TOP = Chars.HLINE;
+                corners.TOP_RIGHT = Chars.URCORNER;
+                corners.LEFT = Chars.VLINE;
+                corners.MIDDLE = ' '.charCodeAt(0);
+                corners.RIGHT = Chars.VLINE;
+                corners.BOTTOM_LEFT = Chars.BTEE;
+                corners.BOTTOM = Chars.HLINE;
+                corners.BOTTOM_RIGHT = Chars.BTEE;
+                
+            case BorderType.TABBAR_BUTTON_SELECTED:
+                corners.TOP_LEFT = Chars.ULCORNER;
+                corners.TOP = Chars.HLINE;
+                corners.TOP_RIGHT = Chars.URCORNER;
+                corners.LEFT = Chars.VLINE;
+                corners.MIDDLE = ' '.charCodeAt(0);
+                corners.RIGHT = Chars.VLINE;
+                corners.BOTTOM_LEFT = Chars.LRCORNER;
+                corners.BOTTOM = ' '.charCodeAt(0);
+                corners.BOTTOM_RIGHT = Chars.LLCORNER;
         }
         
         return corners;

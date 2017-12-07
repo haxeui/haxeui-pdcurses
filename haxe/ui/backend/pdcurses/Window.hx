@@ -2,6 +2,7 @@ package haxe.ui.backend.pdcurses;
 import haxe.ui.backend.pdcurses.DrawParams.BorderType;
 import haxe.ui.backend.pdcurses.lib.PDCurses;
 import haxe.ui.components.Label;
+import haxe.ui.components.TabBar;
 import haxe.ui.containers.ListView;
 import haxe.ui.containers.ScrollView;
 import haxe.ui.core.Component;
@@ -187,6 +188,17 @@ class Window {
                 drawParams.borderType = BorderType.THIN;
             } else if (_c.style.color != null) {
                 drawParams.color = ColorHelper.getColor(ColorHelper.approximateColor(_c.style.color), backgroundColor);
+            }
+            
+            // all a little hacky - think about better way to handle this sort of stuff (assuming this backend is ever of any real use)
+            if (Std.is(_c, TabBar)) {
+                drawParams.borderType = BorderType.TABBAR;
+            }
+            if (_c.hasClass("tabbar-button")) {
+                drawParams.borderType = BorderType.TABBAR_BUTTON;
+            }
+            if (_c.hasClass("tabbar-button-selected")) {
+                drawParams.borderType = BorderType.TABBAR_BUTTON_SELECTED;
             }
             
             DrawHelper.box(xpos, ypos, _w, _h, drawParams, clipRect);
