@@ -28,12 +28,12 @@ class ScreenBase {
 
     public var width(get, null):Float;
     private function get_width():Float {
-        return 0;
+        return app.terminalWidth;
     }
 
     public var height(get, null):Float;
     private function get_height():Float {
-        return 0;
+        return app.terminalHeight;
     }
 
     public var dpi(get, null):Float;
@@ -47,6 +47,12 @@ class ScreenBase {
     }
     
     public function addComponent(component:Component) {
+        if (component.percentWidth != null) {
+            component.width = (component.percentWidth * width) / 100;
+        }
+        if (component.percentHeight != null) {
+            component.height = (component.percentHeight * height) / 100;
+        }
         app.addTopLevelWindow(component.window);
     }
 

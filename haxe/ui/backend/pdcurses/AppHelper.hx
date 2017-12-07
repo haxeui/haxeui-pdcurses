@@ -13,6 +13,9 @@ class AppHelper {
     
     private var _windows:Array<Window> = [];
     
+    public var terminalWidth:Int = 0;
+    public var terminalHeight:Int = 0;
+    
     public function new() {
     }
     
@@ -34,6 +37,9 @@ class AppHelper {
         PDCurses.noecho();
         PDCurses.curs_set(0);
         PDCurses.keypad(PDCurses.stdscr, true);
+        
+        terminalWidth = PDCurses.getmaxx(PDCurses.stdscr);
+        terminalHeight = PDCurses.getmaxy(PDCurses.stdscr);
         
         _mouse = new MouseHelper();
         _mouse.onPressed = onMousePressed;
@@ -170,7 +176,7 @@ class AppHelper {
             //}
             
             PDCurses.attrset(PDCurses.COLOR_PAIR(ColorHelper.getColor(Color.BLACK, backgroundColor)));
-            PDCurses.mvprintw(1, 0, debugString + "                                           ");
+            //PDCurses.mvprintw(1, 0, debugString + "                                           ");
         }
         
         _mouse.destroy();

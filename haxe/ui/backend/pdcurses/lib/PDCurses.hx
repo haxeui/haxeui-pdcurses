@@ -16,6 +16,9 @@ extern class PDCurses {
     @:native("keypad") public static function keypad(w:RawPointer<WINDOW>, b:Bool):Void;
     @:native("refresh") public static function refresh():Void;
     @:native("endwin") public static function endwin():Void;
+
+    @:native("getmaxx") public static function getmaxx(w:RawPointer<WINDOW>):Int;
+    @:native("getmaxy") public static function getmaxy(w:RawPointer<WINDOW>):Int;
     
     @:native("wgetch") public static function wgetch(w:RawPointer<WINDOW>):Int;
     @:native("mouse_set") public static function mouse_set(i:Int):Int;
