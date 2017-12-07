@@ -7,7 +7,7 @@ TODO: remove all !important when moving to new css engine as they arent needed b
 }
 
 .box, .vbox, .hbox, .absolute, .continuoushbox, .hgrid, .vgrid, .grid {
-    spacing: 1px !important;
+    spacing: 0px !important;
 }
 
 .button {

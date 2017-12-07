@@ -1,5 +1,5 @@
 *{filter:none!important;}
-.box,.vbox,.hbox,.absolute,.continuoushbox,.hgrid,.vgrid,.grid{spacing:1px!important;}
+.box,.vbox,.hbox,.absolute,.continuoushbox,.hgrid,.vgrid,.grid{spacing:0px!important;}
 .button{border-width:1px!important;border-color:#C0C0C0!important;background-color:#000000!important;color:#C0C0C0!important;padding:1px 3px!important;}
 .button:hover{border-width:1px!important;border-color:#FFFFFF!important;background-color:#000000!important;color:#FFFFFF!important;}
 .button:down{border-width:1px!important;border-color:#C0C0C0!important;background-color:#000000!important;color:#C0C0C0!important;}
