@@ -177,6 +177,7 @@ class AppHelper {
             
             PDCurses.attrset(PDCurses.COLOR_PAIR(ColorHelper.getColor(Color.BLACK, backgroundColor)));
             //PDCurses.mvprintw(1, 0, debugString + "                                           ");
+            Sys.sleep(0.01);
         }
         
         _mouse.destroy();
