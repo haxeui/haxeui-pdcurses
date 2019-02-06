@@ -3,10 +3,10 @@ package haxe.ui.backend.pdcurses;
 import cpp.vm.Thread;
 import haxe.ui.backend.pdcurses.lib.PDCurses;
 import haxe.ui.components.Label;
-import haxe.ui.core.MouseEvent;
+import haxe.ui.events.MouseEvent;
 import haxe.ui.core.Screen;
 
-@:access(haxe.ui.backend.ScreenBase)
+@:access(haxe.ui.backend.ScreenImpl)
 @:access(haxe.ui.backend.pdcurses.Window)
 class AppHelper {
     private var _mouse:MouseHelper;

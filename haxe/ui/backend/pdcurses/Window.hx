@@ -6,10 +6,10 @@ import haxe.ui.components.TabBar;
 import haxe.ui.containers.ListView;
 import haxe.ui.containers.ScrollView;
 import haxe.ui.core.Component;
-import haxe.ui.core.MouseEvent;
-import haxe.ui.util.Rectangle;
+import haxe.ui.events.MouseEvent;
+import haxe.ui.geom.Rectangle;
 
-@:access(haxe.ui.backend.ComponentBase)
+@:access(haxe.ui.backend.ComponentImpl)
 class Window {
     public var children:Array<Window> = [];
     public var parent:Window = null;
@@ -159,7 +159,7 @@ class Window {
         return c;
     }
     
-    @:access(haxe.ui.backend.TextDisplayBase)
+    @:access(haxe.ui.backend.TextDisplayImpl)
     public function redraw(clipRect:Rectangle = null) {
         if (_w <= 0 || _h <= 0 || hidden == true) {
             return;

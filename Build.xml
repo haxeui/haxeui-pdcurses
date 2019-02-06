@@ -3,10 +3,6 @@
         <files id="haxe">
             <compilerflag value="-I${haxelib:haxeui-pdcurses}/include" />
             <compilerflag value="-I${haxelib:haxeui-pdcurses}/lib" />
-            <compilerflag value="-DUNICODE" />
-            <compilerflag value="-D_UNICODE" />
-            <compilerflag value="-DwxMSVC_VERISON_AUTO" />
-            <compilerflag value="-DWIN32" if="windows" />
         </files>
 
         <target id="haxe" tool="linker" toolid="exe">

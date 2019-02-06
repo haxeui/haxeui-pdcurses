@@ -1,6 +1,6 @@
 package haxe.ui.backend;
 
-class CallLaterBase {
+class CallLaterImpl {
     private var _fn:Void->Void;
     
     public function new(fn:Void->Void) {

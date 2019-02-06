@@ -1,6 +1,6 @@
 package haxe.ui.backend;
 
-class TextInputBase extends TextDisplayBase {
+class TextInputImpl extends TextDisplayImpl {
     private var _password:Bool;
     private var _hscrollPos:Float;
     private var _vscrollPos:Float;

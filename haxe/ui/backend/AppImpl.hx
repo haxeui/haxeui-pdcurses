@@ -4,33 +4,25 @@ import haxe.ui.Preloader.PreloadItem;
 import haxe.ui.backend.pdcurses.AppHelper;
 
 @:buildXml('<include name=\"${haxelib:haxeui-pdcurses}/Build.xml\" />')
-class AppBase {
+class AppImpl extends AppBase2 {
     private var _app:AppHelper;
     
     public function new() {
         _app = new AppHelper();
     }
 
-    private function build() {
-
-    }
-
-    private function init(onReady:Void->Void, onEnd:Void->Void = null) {
+    private override function init(onReady:Void->Void, onEnd:Void->Void = null) {
         _app.init();
         onReady();
     }
 
-    private function getToolkitInit():Dynamic {
+    private override function getToolkitInit():ToolkitOptions {
         return {
             app: _app
         };
     }
 
-    public function start() {
+    public override function start() {
         _app.start();
-    }
-    
-    private function buildPreloadList():Array<PreloadItem> {
-        return [];
     }
 }
