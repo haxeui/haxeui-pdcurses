@@ -3,8 +3,8 @@ package haxe.ui.backend.pdcurses;
 import cpp.vm.Thread;
 import haxe.ui.backend.pdcurses.lib.PDCurses;
 import haxe.ui.components.Label;
-import haxe.ui.events.MouseEvent;
 import haxe.ui.core.Screen;
+import haxe.ui.events.MouseEvent;
 
 @:access(haxe.ui.backend.ScreenImpl)
 @:access(haxe.ui.backend.pdcurses.Window)

@@ -6,6 +6,9 @@
     spacing: 0px;
 }
 
+.label {
+}
+
 .button {
     border-width: 1px;
     border-color: #C0C0C0;
@@ -188,6 +191,56 @@
     background-color: #C0C0C0;
 }
 
+
+.vertical-scroll {
+    width: 1px;
+    background-color: #000000;
+    color: #C0C0C0;
+    background-image: "ascii:BOARD";
+}
+
+.vertical-scroll .button.thumb {
+    width: 1px;
+    background-color: #C0C0C0;
+}
+
+.vertical-scroll .button.thumb:down {
+    background-color: #C0C0C0;
+}
+
+.vertical-scroll .button.thumb:hover {
+    background-color: #FFFFFF;
+}
+
+.vertical-scroll .deinc {
+    icon: "ascii:UARROW";
+    color: #000000;
+}
+
+.vertical-scroll .deinc:hover {
+    background-color: #FFFFFF;
+}
+
+.vertical-scroll .deinc:down {
+    background-color: #888888;
+    color: #FFFFFF;
+}
+
+.vertical-scroll .inc {
+    icon: "ascii:DARROW";
+    color: #000000;
+}
+
+.vertical-scroll .inc:hover {
+    background-color: #FFFFFF;
+}
+
+.vertical-scroll .inc:down {
+    background-color: #888888;
+    color: #FFFFFF;
+}
+
+/*
 .hscroll {
     height: 1px;
     background-color: #000000;
@@ -285,6 +338,7 @@
     background-color: #888888;
     color: #FFFFFF;
 }
+*/
 
 
 .scrollview {

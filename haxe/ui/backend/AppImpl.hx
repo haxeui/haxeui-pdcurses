@@ -4,7 +4,7 @@ import haxe.ui.Preloader.PreloadItem;
 import haxe.ui.backend.pdcurses.AppHelper;
 
 @:buildXml('<include name=\"${haxelib:haxeui-pdcurses}/Build.xml\" />')
-class AppImpl extends AppBase2 {
+class AppImpl extends AppBase {
     private var _app:AppHelper;
     
     public function new() {

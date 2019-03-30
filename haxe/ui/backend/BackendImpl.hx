@@ -1,5 +1,5 @@
 package haxe.ui.backend;
 
 class BackendImpl {
-    public static var id:String = "blank";
+    public static var id:String = "pdcurses";
 }

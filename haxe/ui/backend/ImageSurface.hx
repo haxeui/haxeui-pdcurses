@@ -1,6 +1,6 @@
 package haxe.ui.backend;
 
-class ComponentSurface {
+class ImageSurface {
     public function new() {
     }
 }

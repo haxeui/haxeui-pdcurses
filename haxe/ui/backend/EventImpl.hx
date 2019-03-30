@@ -2,5 +2,5 @@ package haxe.ui.backend;
 
 import haxe.ui.events.UIEvent;
 
-class EventImpl extends EventBase2 {
+class EventImpl extends EventBase {
 }

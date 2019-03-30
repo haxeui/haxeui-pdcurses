@@ -1,24 +1,20 @@
 package haxe.ui.backend;
 
-import haxe.ui.backend.pdcurses.AppHelper;
-import haxe.ui.backend.pdcurses.Color;
 import haxe.ui.backend.pdcurses.ColorHelper;
 import haxe.ui.backend.pdcurses.Window;
+import haxe.ui.core.Component;
 import haxe.ui.events.MouseEvent;
 import haxe.ui.events.UIEvent;
-import haxe.ui.core.Component;
-import haxe.ui.styles.Style;
 import haxe.ui.geom.Rectangle;
-import haxe.ui.core.ImageDisplay;
-import haxe.ui.core.TextDisplay;
-import haxe.ui.core.TextInput;
+import haxe.ui.styles.Style;
 
-class ComponentImpl extends ComponentBase2 {
+class ComponentImpl extends ComponentBase {
     private var _eventMap:Map<String, UIEvent->Void>;
     
     public var window:Window;
     
     public function new() {
+        super();
         _eventMap = new Map<String, UIEvent->Void>();
     }
 
@@ -27,7 +23,8 @@ class ComponentImpl extends ComponentBase2 {
     }
 
     private override function handlePosition(left:Null<Float>, top:Null<Float>, style:Style) {
-        window.move(Std.int(left), Std.int(top));
+        trace(top);
+        window.move(Math.ceil(left), Math.ceil(top));
     }
 
     private override function handleSize(width:Null<Float>, height:Null<Float>, style:Style) {
@@ -42,8 +39,8 @@ class ComponentImpl extends ComponentBase2 {
         _clipRect = value;
         if (window != null) {
             var c:Component = cast(this, Component);
-            window.x = Std.int(c.left - value.left);
-            window.y = Std.int(c.top - value.top);
+            window.x = Std.int(c.left - Math.ceil(value.left));
+            window.y = Std.int(c.top - Math.ceil(value.top));
         }
     }
 

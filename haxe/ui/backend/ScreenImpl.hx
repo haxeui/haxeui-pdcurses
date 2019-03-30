@@ -5,7 +5,7 @@ import haxe.ui.core.Component;
 import haxe.ui.events.MouseEvent;
 import haxe.ui.events.UIEvent;
 
-class ScreenImpl extends ScreenBase2 {
+class ScreenImpl extends ScreenBase {
     private var _mapping:Map<String, UIEvent->Void>;
     
     public function new() {
