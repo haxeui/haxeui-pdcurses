@@ -2,43 +2,22 @@ package haxe.ui.backend;
 
 import haxe.ui.backend.pdcurses.AppHelper;
 import haxe.ui.core.Component;
-import haxe.ui.core.MouseEvent;
-import haxe.ui.core.UIEvent;
-import haxe.ui.containers.dialogs.Dialog;
-import haxe.ui.containers.dialogs.DialogButton;
+import haxe.ui.events.MouseEvent;
+import haxe.ui.events.UIEvent;
 
-class ScreenBase {
+class ScreenImpl extends ScreenBase {
     private var _mapping:Map<String, UIEvent->Void>;
     
     public function new() {
         _mapping = new Map<String, UIEvent->Void>();
     }
 
-    public var focus:Component;
-
-    private var _options:Dynamic;
-    public var options(get, set):Dynamic;
-    private function get_options():Dynamic {
-        return _options;
-    }
-    private function set_options(value:Dynamic):Dynamic {
-        _options = value;
-        return value;
-    }
-
-    public var width(get, null):Float;
-    private function get_width():Float {
+    private override function get_width():Float {
         return app.terminalWidth;
     }
 
-    public var height(get, null):Float;
-    private function get_height():Float {
+    private override function get_height():Float {
         return app.terminalHeight;
-    }
-
-    public var dpi(get, null):Float;
-    private function get_dpi():Float {
-        return 72;
     }
 
     private var app(get, null):AppHelper;
@@ -46,7 +25,7 @@ class ScreenBase {
         return options.app;
     }
     
-    public function addComponent(component:Component) {
+    public override function addComponent(component:Component) {
         if (component.percentWidth != null) {
             component.width = (component.percentWidth * width) / 100;
         }
@@ -56,31 +35,16 @@ class ScreenBase {
         app.addTopLevelWindow(component.window);
     }
 
-    public function removeComponent(component:Component) {
+    public override function removeComponent(component:Component) {
     }
 
-    private function handleSetComponentIndex(child:Component, index:Int) {
-    }
-
-    //***********************************************************************************************************
-    // Dialogs
-    //***********************************************************************************************************
-    public function messageDialog(message:String, title:String = null, options:Dynamic = null, callback:DialogButton->Void = null):Dialog {
-        return null;
-    }
-
-    public function showDialog(content:Component, options:Dynamic = null, callback:DialogButton->Void = null):Dialog {
-        return null;
-    }
-
-    public function hideDialog(dialog:Dialog):Bool {
-        return false;
+    private override function handleSetComponentIndex(child:Component, index:Int) {
     }
 
     //***********************************************************************************************************
     // Events
     //***********************************************************************************************************
-    private function supportsEvent(type:String):Bool {
+    private override function supportsEvent(type:String):Bool {
         switch (type) {
             case MouseEvent.MOUSE_DOWN:
                 return true;
@@ -92,7 +56,7 @@ class ScreenBase {
         return false;
     }
 
-    private function mapEvent(type:String, listener:UIEvent->Void) {
+    private override function mapEvent(type:String, listener:UIEvent->Void) {
         switch (type) {
             case MouseEvent.MOUSE_DOWN:
                 _mapping.set(type, listener);
@@ -103,7 +67,7 @@ class ScreenBase {
         }
     }
 
-    private function unmapEvent(type:String, listener:UIEvent->Void) {
+    private override function unmapEvent(type:String, listener:UIEvent->Void) {
         switch (type) {
             case MouseEvent.MOUSE_DOWN:
                 _mapping.remove(type);

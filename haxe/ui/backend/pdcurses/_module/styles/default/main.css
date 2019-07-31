@@ -1,63 +1,62 @@
-/*
-TODO: remove all !important when moving to new css engine as they arent needed because of weighted include order
-*/
-
 * {
-    filter: none !important;
+    filter: none;
 }
 
 .box, .vbox, .hbox, .absolute, .continuoushbox, .hgrid, .vgrid, .grid {
-    spacing: 0px !important;
+    spacing: 0px;
+}
+
+.label {
 }
 
 .button {
-    border-width: 1px !important;
-    border-color: #C0C0C0 !important;
-    background-color: #000000 !important;
-    color: #C0C0C0 !important;
-    padding: 1px 3px !important;
+    border-width: 1px;
+    border-color: #C0C0C0;
+    background-color: #000000;
+    color: #C0C0C0;
+    padding: 1px 3px;
 }
 
 .button:hover {
-    border-width: 1px !important;
-    border-color: #FFFFFF !important;
-    background-color: #000000 !important;
-    color: #FFFFFF !important;
+    border-width: 1px;
+    border-color: #FFFFFF;
+    background-color: #000000;
+    color: #FFFFFF;
 }
 
 .button:down {
-    border-width: 1px !important;
-    border-color: #C0C0C0 !important;
-    background-color: #000000 !important;
-    color: #C0C0C0 !important;
+    border-width: 1px;
+    border-color: #C0C0C0;
+    background-color: #000000;
+    color: #C0C0C0;
 }
 
 .hprogress {
-    height: 3px !important;
-    border-width: 1px !important;
-    border-color: #C0C0C0 !important;
-    background-color: #000000 !important;
-    padding: 1px !important;
+    height: 3px;
+    border-width: 1px;
+    border-color: #C0C0C0;
+    background-color: #000000;
+    padding: 1px;
     background-image: "ascii:BOARD";
 }
 
 .hprogress .progress-value {
-    height: 1px !important;
-    background-color: #FFFFFF !important;
+    height: 1px;
+    background-color: #FFFFFF;
 }
 
 .vprogress {
-    width: 3px !important;
-    border-width: 1px !important;
-    border-color: #C0C0C0 !important;
-    background-color: #000000 !important;
-    padding: 1px !important;
+    width: 3px;
+    border-width: 1px;
+    border-color: #C0C0C0;
+    background-color: #000000;
+    padding: 1px;
     background-image: "ascii:BOARD";
 }
 
 .vprogress .progress-value {
-    width: 1px !important;
-    background-color: #FFFFFF !important;
+    width: 1px;
+    background-color: #FFFFFF;
 }
 
 
@@ -66,28 +65,28 @@ TODO: remove all !important when moving to new css engine as they arent needed b
 
 
 .hslider {
-    height: 3px !important;
-    background-color: #000000 !important;
-    padding: 1px !important;
+    height: 3px;
+    background-color: #000000;
+    padding: 1px;
 }
 
 .hslider .slider-value-background {
-    height: 1px !important;
-    padding: 0px !important;
-    background-color: #000000 !important;
-    background-image: "ascii:BOARD" !important;
-    color: #C0C0C0 !important;
-    border: none !important;
+    height: 1px;
+    padding: 0px;
+    background-color: #000000;
+    background-image: "ascii:BOARD";
+    color: #C0C0C0;
+    border: none;
 }
 
 .hslider .slider-value {
-    height: 1px !important;
-    background-color: #FFFFFF !important;
+    height: 1px;
+    background-color: #FFFFFF;
 }
 
 .hslider .slider-button {
-    width: 2px !important;
-    height: 3px !important;
+    width: 2px;
+    height: 3px;
 }
 
 
@@ -95,30 +94,30 @@ TODO: remove all !important when moving to new css engine as they arent needed b
 
 
 .vslider {
-    width: 3px !important;
-    border-color: #008800 !important;
-    background-color: #000000 !important;
-    padding: 1px !important;
-    filter: none !important;
+    width: 3px;
+    border-color: #008800;
+    background-color: #000000;
+    padding: 1px;
+    filter: none;
 }
 
 .vslider .slider-value-background {
-    width: 1px !important;
-    padding: 0px !important;
-    background-color: #000000 !important;
-    background-image: "ascii:BOARD" !important;
-    color: #C0C0C0 !important;
-    border: none !important;
+    width: 1px;
+    padding: 0px;
+    background-color: #000000;
+    background-image: "ascii:BOARD";
+    color: #C0C0C0;
+    border: none;
 }
 
 .vslider .slider-value {
-    width: 1px !important;
-    background-color: #FFFFFF !important;
+    width: 1px;
+    background-color: #FFFFFF;
 }
 
 .vslider .slider-button {
-    width: 3px !important;
-    height: 2px !important;
+    width: 3px;
+    height: 2px;
 }
 
 
@@ -126,54 +125,54 @@ TODO: remove all !important when moving to new css engine as they arent needed b
 
 
 .checkbox {
-    background-color: #000000 !important;
-    border: 1px !important;
-    horizontal-spacing: 0px !important;
-    color: #C0C0C0 !important;
+    background-color: #000000;
+    border: 1px;
+    horizontal-spacing: 0px;
+    color: #C0C0C0;
 }
 
 .checkbox-value {
-    border-width: 1px !important;
-    border-color: #C0C0C0 !important;
-    background-color: #000000 !important;
-    width: 3px !important;
-    height: 3px !important;
+    border-width: 1px;
+    border-color: #C0C0C0;
+    background-color: #000000;
+    width: 3px;
+    height: 3px;
 }
 
 .checkbox-value:selected {
-    icon: "ascii:BLOCK" !important;
-    color: #FFFFFF !important;
+    icon: "ascii:BLOCK";
+    color: #FFFFFF;
 }
 
 .checkbox-label {
-    background-color: #000000 !important;
-    color: #C0C0C0 !important;
+    background-color: #000000;
+    color: #C0C0C0;
 }
 
 .optionbox {
-    background-color: #000000 !important;
-    border: 1px !important;
-    horizontal-spacing: 0px !important;
-    color: #C0C0C0 !important;
+    background-color: #000000;
+    border: 1px;
+    horizontal-spacing: 0px;
+    color: #C0C0C0;
 }
 
 .optionbox-value {
-    border-width: 1px !important;
-    border-color: #C0C0C0 !important;
-    background-color: #000000 !important;
-    width: 3px !important;
-    height: 3px !important;
-    filter:none !important;
+    border-width: 1px;
+    border-color: #C0C0C0;
+    background-color: #000000;
+    width: 3px;
+    height: 3px;
+    filter:none;
 }
 
 .optionbox-value:selected {
-    icon: "ascii:DIAMOND" !important;
-    color: #FFFFFF !important;
+    icon: "ascii:DIAMOND";
+    color: #FFFFFF;
 }
 
 .optionbox-label {
-    background-color: none !important;
-    color: red !important;
+    background-color: none;
+    color: red;
 }
 
 
@@ -185,151 +184,202 @@ TODO: remove all !important when moving to new css engine as they arent needed b
 
 
 .scroll .button {
-    width: 1px !important;
-    height: 1px !important;
-    icon: none !important;
-    border: none !important;
-    background-color: #C0C0C0 !important;
+    width: 1px;
+    height: 1px;
+    icon: none;
+    border: none;
+    background-color: #C0C0C0;
 }
 
+
+.vertical-scroll {
+    width: 1px;
+    background-color: #000000;
+    color: #C0C0C0;
+    background-image: "ascii:BOARD";
+}
+
+.vertical-scroll .button.thumb {
+    width: 1px;
+    background-color: #C0C0C0;
+}
+
+.vertical-scroll .button.thumb:down {
+    background-color: #C0C0C0;
+}
+
+.vertical-scroll .button.thumb:hover {
+    background-color: #FFFFFF;
+}
+
+.vertical-scroll .deinc {
+    icon: "ascii:UARROW";
+    color: #000000;
+}
+
+.vertical-scroll .deinc:hover {
+    background-color: #FFFFFF;
+}
+
+.vertical-scroll .deinc:down {
+    background-color: #888888;
+    color: #FFFFFF;
+}
+
+.vertical-scroll .inc {
+    icon: "ascii:DARROW";
+    color: #000000;
+}
+
+.vertical-scroll .inc:hover {
+    background-color: #FFFFFF;
+}
+
+.vertical-scroll .inc:down {
+    background-color: #888888;
+    color: #FFFFFF;
+}
+
+/*
 .hscroll {
-    height: 1px !important;
-    background-color: #000000 !important;
-    color: #C0C0C0 !important;
-    background-image: "ascii:BOARD" !important;
+    height: 1px;
+    background-color: #000000;
+    color: #C0C0C0;
+    background-image: "ascii:BOARD";
 }
 
 .hscroll .button.thumb {
-    height: 1px !important;
-    background-color: #C0C0C0 !important;
+    height: 1px;
+    background-color: #C0C0C0;
 }
 
 .hscroll .button.thumb:down {
-    background-color: #C0C0C0 !important;
+    background-color: #C0C0C0;
 }
 
 .hscroll .button.thumb:hover {
-    background-color: #FFFFFF !important;
+    background-color: #FFFFFF;
 }
 
 .hscroll .button.deinc {
-    icon: "ascii:LARROW" !important;
-    color: #000000 !important;
+    icon: "ascii:LARROW";
+    color: #000000;
 }
 
 .hscroll .button.deinc:hover {
-    background-color: #FFFFFF !important;
+    background-color: #FFFFFF;
 }
 
 .hscroll .button.deinc:down {
-    background-color: #888888 !important;
-    color: #FFFFFF !important;
+    background-color: #888888;
+    color: #FFFFFF;
 }
 
 .hscroll .button.inc {
-    icon: "ascii:RARROW" !important;
-    color: #000000 !important;
+    icon: "ascii:RARROW";
+    color: #000000;
 }
 
 .hscroll .button.inc:hover {
-    background-color: #FFFFFF !important;
+    background-color: #FFFFFF;
 }
 
 .hscroll .button.inc:down {
-    background-color: #888888 !important;
-    color: #FFFFFF !important;
+    background-color: #888888;
+    color: #FFFFFF;
 }
 
 
 
 .vscroll {
-    width: 1px !important;
-    background-color: #000000 !important;
-    color: #C0C0C0 !important;
-    background-image: "ascii:BOARD" !important;
+    width: 1px;
+    background-color: #000000;
+    color: #C0C0C0;
+    background-image: "ascii:BOARD";
 }
 
 .vscroll .button.thumb {
-    width: 1px !important;
-    background-color: #C0C0C0 !important;
+    width: 1px;
+    background-color: #C0C0C0;
 }
 
 .vscroll .button.thumb:down {
-    background-color: #C0C0C0 !important;
+    background-color: #C0C0C0;
 }
 
 .vscroll .button.thumb:hover {
-    background-color: #FFFFFF !important;
+    background-color: #FFFFFF;
 }
 
 .vscroll .button.deinc {
-    icon: "ascii:UARROW" !important;
-    color: #000000 !important;
+    icon: "ascii:UARROW";
+    color: #000000;
 }
 
 .vscroll .button.deinc:hover {
-    background-color: #FFFFFF !important;
+    background-color: #FFFFFF;
 }
 
 .vscroll .button.deinc:down {
-    background-color: #888888 !important;
-    color: #FFFFFF !important;
+    background-color: #888888;
+    color: #FFFFFF;
 }
 
 .vscroll .button.inc {
-    icon: "ascii:DARROW" !important;
-    color: #000000 !important;
+    icon: "ascii:DARROW";
+    color: #000000;
 }
 
 .vscroll .button.inc:hover {
-    background-color: #FFFFFF !important;
+    background-color: #FFFFFF;
 }
 
 .vscroll .button.inc:down {
-    background-color: #888888 !important;
-    color: #FFFFFF !important;
+    background-color: #888888;
+    color: #FFFFFF;
 }
+*/
 
 
 .scrollview {
-    padding: 1px !important;
-    border-width: 1px !important;
-    border-size: 1px !important;
-    background-color: #000000 !important;
-    border-color: #C0C0C0 !important;
+    padding: 1px;
+    border-width: 1px;
+    border-size: 1px;
+    background-color: #000000;
+    border-color: #C0C0C0;
 }
 
 .scrollview .scrollview-contents {
-    padding: 0px !important;
-    padding-right: 0px !important;
-    padding-bottom: 0px !important;
+    padding: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
 }
 
 .itemrenderer {
-    padding: 1px !important;
+    padding: 1px;
 }
 
 .listview {
-    padding: 1px !important;
+    padding: 1px;
 }
 
 .listview .listview-contents {
-    spacing: 0 !important;
+    spacing: 0;
 }
 
 .listview .itemrenderer.even {
-    background-color: #000000 !important;
+    background-color: #000000;
 }
 
 .listview .itemrenderer.even .label {
-    color: #C0C0C0 !important;
+    color: #C0C0C0;
 }
 
 .listview .itemrenderer.even .label {
 }
 
 .listview .itemrenderer.odd {
-    background-color: #888888 !important;
+    background-color: #888888;
 }
 
 .listview .itemrenderer.odd .label {
@@ -337,27 +387,27 @@ TODO: remove all !important when moving to new css engine as they arent needed b
 
 
 .listview .itemrenderer.even:hover {
-    background-color: #C0C0C0 !important;
+    background-color: #C0C0C0;
 }
 
 .listview .itemrenderer.odd:hover {
-    background-color: #888888 !important;
+    background-color: #888888;
 }
 
 .listview .itemrenderer:selected {
-    background-color: #000088 !important;
-    color: white !important;
+    background-color: #000088;
+    color: white;
 }
 
 .tabbar {
-    padding-left: 1px !important;
-    padding-right: 1px !important;
-    border: 1px solid #C0C0C0 !important;
-    background-color: black !important;
+    padding-left: 1px;
+    padding-right: 1px;
+    border: 1px solid #C0C0C0;
+    background-color: black;
 }
 
 .tabview .tabview-content {
-    border: 1px solid #C0C0C0 !important;
-    background-color: black !important;
-    padding: 1px !important;
+    border: 1px solid #C0C0C0;
+    background-color: black;
+    padding: 1px;
 }

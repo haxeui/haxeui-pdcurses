@@ -4,7 +4,7 @@ import haxe.ui.backend.pdcurses.DrawParams.BorderEffect;
 import haxe.ui.backend.pdcurses.DrawParams.BorderType;
 import haxe.ui.backend.pdcurses.lib.Chars;
 import haxe.ui.backend.pdcurses.lib.PDCurses;
-import haxe.ui.util.Rectangle;
+import haxe.ui.geom.Rectangle;
 
 class CornerChars {
     public var TOP_LEFT:Int = Chars.ULCORNER;

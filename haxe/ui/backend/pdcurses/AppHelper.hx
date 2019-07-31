@@ -3,10 +3,10 @@ package haxe.ui.backend.pdcurses;
 import cpp.vm.Thread;
 import haxe.ui.backend.pdcurses.lib.PDCurses;
 import haxe.ui.components.Label;
-import haxe.ui.core.MouseEvent;
 import haxe.ui.core.Screen;
+import haxe.ui.events.MouseEvent;
 
-@:access(haxe.ui.backend.ScreenBase)
+@:access(haxe.ui.backend.ScreenImpl)
 @:access(haxe.ui.backend.pdcurses.Window)
 class AppHelper {
     private var _mouse:MouseHelper;
@@ -177,6 +177,7 @@ class AppHelper {
             
             PDCurses.attrset(PDCurses.COLOR_PAIR(ColorHelper.getColor(Color.BLACK, backgroundColor)));
             //PDCurses.mvprintw(1, 0, debugString + "                                           ");
+            Sys.sleep(0.01);
         }
         
         _mouse.destroy();
