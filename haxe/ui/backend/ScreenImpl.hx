@@ -2,6 +2,7 @@ package haxe.ui.backend;
 
 import haxe.ui.backend.pdcurses.CursesApp;
 import haxe.ui.backend.pdcurses.Mouse;
+import haxe.ui.backend.pdcurses.lib.Curses;
 import haxe.ui.core.Component;
 import haxe.ui.events.MouseEvent;
 import haxe.ui.events.UIEvent;
@@ -21,6 +22,11 @@ class ScreenImpl extends ScreenBase {
         return app.terminalHeight;
     }
 
+    private override function set_title(s:String):String {
+        Curses.PDC_set_title(s);
+        return s;
+    }
+    
     private var app(get, null):CursesApp;
     private function get_app():CursesApp {
         return options.app;
