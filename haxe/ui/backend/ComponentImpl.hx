@@ -58,19 +58,6 @@ class ComponentImpl extends ComponentBase {
             clipRect = clipComponent.componentClipRect.copy();
             clipRect.left += clipComponent.screenLeft;
             clipRect.top += clipComponent.screenTop;
-            
-            /*
-            if (parentComponent != null && (this.parentComponent.parentComponent is ListView)) { // HACK
-                var lv = cast(this.parentComponent.parentComponent, ListView);
-                if (lv.vscrollMax == 0) {
-                    //clipRect.width -= 1;
-                }
-            } else {
-                //clipRect.width -= 1;
-            }
-            
-            //clipRect.height += 1;
-            */
             clipRect.width -= 1;
             if (clipRect.intersects(bounds) == false) {
                 return;
@@ -108,10 +95,6 @@ class ComponentImpl extends ComponentBase {
                 bg = Color.getBackground(nativeWindow, Std.int(_imageDisplay.top + sx), Std.int(_imageDisplay.top + sy));
             }
             _imageDisplay.print(window, sx, sy, fg, bg);
-            /*
-            Color.set(nativeWindow, fg, bg);
-            mvwaddch(nativeWindow, Std.int(_imageDisplay.top + sy), Std.int(_imageDisplay.top + sx), _imageDisplay.imageInfo.data.char);
-            */
         }
         
         for (child in childComponents) {
