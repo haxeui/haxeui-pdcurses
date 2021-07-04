@@ -26,7 +26,5 @@
         </default>
         <dark parent="default">
         </dark>
-        <pascal parent="default">
-        </pascal>
     </themes>
 </module>
