@@ -1,7 +1,7 @@
 package haxe.ui.backend;
 
-import haxe.ui.backend.pdcurses.AppHelper;
+import haxe.ui.backend.pdcurses.CursesApp;
 
 typedef ToolkitOptions = {
-    ?app:AppHelper
-};
+    ?app:CursesApp
+}

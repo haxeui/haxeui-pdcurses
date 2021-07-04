@@ -1,0 +1,53 @@
+.menubar {
+    padding: 0px;
+    border: none;
+    border: 1px menu;
+    padding-bottom: 1px;
+}
+
+.menubar-button {
+    background-color: none;
+    border: none;
+}
+
+.menubar-button:down {
+    border: 1px outset;
+}
+
+.menu {
+    padding: 1px;
+    width: 20px;
+    margin-top: 1px;
+    border: 1px outset;
+}
+
+.menu.expanded {
+    border: 1px dropdownpopup;
+}
+
+.menu .menu-filler {
+    height: 1px;
+    border: 1px menufiller;
+}
+
+.menu.expanded .menu-filler {
+    __height: 0px;
+    __border: 1px outset;
+}
+
+
+.menuitem {
+    width: 100%;
+    padding: 1px;
+    cursor: pointer;
+}
+
+.menu-item:hover {
+    color: #ffffff;
+    background-color: #000088;
+}
+
+.menu-item:hover .label {
+    color: #ffffff;
+    background-color: #000088;
+}

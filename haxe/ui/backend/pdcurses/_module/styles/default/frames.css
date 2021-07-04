@@ -1,0 +1,21 @@
+.frame {
+    border: 1px single #000080;
+    padding-left: 1px;
+}
+
+.frame-contents {
+    border: none;
+    padding: 1px;
+    padding-top: 0px;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+.frame-left-line, .frame-right-line {
+    background-color: none;
+}
+
+.frame-title {
+    background-color: none;
+    color: #000080;
+}

@@ -1,28 +1,32 @@
 package haxe.ui.backend;
 
-import haxe.ui.Preloader.PreloadItem;
-import haxe.ui.backend.pdcurses.AppHelper;
+import haxe.ui.backend.pdcurses.CursesApp;
 
 @:buildXml('<include name=\"${haxelib:haxeui-pdcurses}/Build.xml\" />')
 class AppImpl extends AppBase {
-    private var _app:AppHelper;
+    
+    private var _cursesApp:CursesApp;
     
     public function new() {
-        _app = new AppHelper();
+        _cursesApp = new CursesApp();
     }
-
+    
     private override function init(onReady:Void->Void, onEnd:Void->Void = null) {
-        _app.init();
+        _cursesApp.init();
         onReady();
     }
 
     private override function getToolkitInit():ToolkitOptions {
         return {
-            app: _app
+            app: _cursesApp
         };
     }
 
     public override function start() {
-        _app.start();
+        _cursesApp.start();
+    }
+    
+    public function trace(s:String) {
+        _cursesApp.addLog(s);
     }
 }

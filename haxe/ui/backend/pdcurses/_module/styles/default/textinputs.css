@@ -1,0 +1,9 @@
+.textfield {
+    border: 1px single #000088;
+    background-color: none;
+    initial-width: 20px;
+    filter: none;
+    height: 3px;
+    padding: 1px;
+    color: #000000;
+}

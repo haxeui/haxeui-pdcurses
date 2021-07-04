@@ -1,0 +1,11 @@
+.box, .hbox {
+    spacing: 1px;
+}
+
+.vbox {
+    vertical-spacing: 0;
+}
+
+.grid {
+    vertical-spacing: 0;
+}

@@ -1,12 +1,51 @@
 <xml>
+    <set name="lib_folder" value="${haxelib:haxeui-pdcurses2}/lib" />
+    
     <section if="windows">
         <files id="haxe">
-            <compilerflag value="-I${haxelib:haxeui-pdcurses}/include" />
-            <compilerflag value="-I${haxelib:haxeui-pdcurses}/lib" />
+            <compilerflag value="-I${lib_folder}" />
+
+            <compilerflag value="-DPDC_FORCE_UTF8" />
+            
+            <file name="${lib_folder}/pdcurses/initscr.c" />
+            <file name="${lib_folder}/pdcurses/kernel.c" />
+            <file name="${lib_folder}/pdcurses/outopts.c" />
+            <file name="${lib_folder}/pdcurses/inopts.c" />
+            <file name="${lib_folder}/pdcurses/refresh.c" />
+            <file name="${lib_folder}/pdcurses/window.c" />
+            <file name="${lib_folder}/pdcurses/overlay.c" />
+            <file name="${lib_folder}/pdcurses/touch.c" />
+            <file name="${lib_folder}/pdcurses/pad.c" />
+            <file name="${lib_folder}/pdcurses/clear.c" />
+            <file name="${lib_folder}/pdcurses/move.c" />
+            <file name="${lib_folder}/pdcurses/addch.c" />
+            <file name="${lib_folder}/pdcurses/scroll.c" />
+            <file name="${lib_folder}/pdcurses/slk.c" />
+            <file name="${lib_folder}/pdcurses/attr.c" />
+            <file name="${lib_folder}/pdcurses/color.c" />
+            <file name="${lib_folder}/pdcurses/printw.c" />
+            <file name="${lib_folder}/pdcurses/addstr.c" />
+            <file name="${lib_folder}/pdcurses/border.c" />
+            <file name="${lib_folder}/pdcurses/getch.c" />
+            <file name="${lib_folder}/pdcurses/mouse.c" />
+            <file name="${lib_folder}/pdcurses/bkgd.c" />
+            <file name="${lib_folder}/pdcurses/inch.c" />
+            <file name="${lib_folder}/pdcurses/getyx.c" />
+            
+            <file name="${lib_folder}/pdcurses/panel.c" />
+            
+            <file name="${lib_folder}/wincon/pdcdisp.c" />
+            <file name="${lib_folder}/wincon/pdcsetsc.c" />
+            <file name="${lib_folder}/wincon/pdcutil.c" />
+            <file name="${lib_folder}/wincon/pdcscrn.c" />
+            <file name="${lib_folder}/wincon/pdckbd.c" />
+            <file name="${lib_folder}/wincon/pdcgetsc.c" />
+            <file name="${lib_folder}/wincon/pdcclip.c" />
         </files>
 
         <target id="haxe" tool="linker" toolid="exe">
-            <lib name="${haxelib:haxeui-pdcurses}/lib/*.lib" />
+            <lib name="Advapi32.lib" />
+            <lib name="Winmm.lib" />
         </target>
     </section>
 </xml>

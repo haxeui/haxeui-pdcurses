@@ -1,0 +1,20 @@
+.range {
+    color: #888888;
+    border: none;
+    padding: 0;
+    background-image: 'CKBOARD'
+}
+
+.range-value {
+    background-color: #000088;
+    border: none;
+}
+
+.range {
+    filter: none;
+    background-image: 'CKBOARD';
+    background-color: #FFFFFF;
+    color: #000080;
+    border: none;
+    __height: 5px;
+}

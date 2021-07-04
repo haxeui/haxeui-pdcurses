@@ -1,9 +1,9 @@
 package haxe.ui.backend;
 
 class CallLaterImpl {
-    private var _fn:Void->Void;
+    private static var _fns:Array<Void->Void> = [];
     
     public function new(fn:Void->Void) {
-        fn();
+        _fns.push(fn);
     }
 }

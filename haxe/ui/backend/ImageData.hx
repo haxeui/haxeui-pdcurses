@@ -1,6 +1,3 @@
 package haxe.ui.backend;
 
-class ImageData {
-    public function new() {
-    }
-}
+typedef ImageData = haxe.ui.backend.pdcurses.ppm.PPMImage;

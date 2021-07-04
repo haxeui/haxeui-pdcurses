@@ -1,0 +1,85 @@
+.messagebox {
+    initial-width: 40px;
+}
+
+
+.messagebox-contents {
+    spacing: 1px;
+    padding: 0;
+    padding-top: 1px;
+    padding-bottom: 0px;
+}
+
+.dialog {
+    filter: none;
+    border: none;
+    background-color: #000088;
+    spacing: 0;
+    padding: 0px;
+    filter: drop-shadow(1, 1, #888888);
+    
+    border: 1px thin #000088;
+    padding: 1px;
+    filter: drop-shadow(.5, 1, #888888);
+    padding-left: 0px;
+}
+
+.dialog-container {
+    spacing: 0px;
+}
+
+.dialog-title {
+    padding: 0px;
+    padding-left: 1px;
+    border: none;
+    background-color: #000088;
+    padding-bottom: 1px;
+}
+
+.dialog-title-label {
+    color: white;
+    background-color: none;
+    vertical-align: top;
+}
+
+.dialog-content {
+    padding: 0px;
+    padding-left: 1px;
+    border: none;
+    padding-right: 1px;
+    padding-bottom: 1px;
+}
+
+.dialog-footer {
+    padding: 0px;
+    horizontal-align: right;
+    border: none;
+    spacing: 2px;
+}
+
+.dialog-footer-container {
+    background-color: #000088;
+    border: none;
+    padding-top: 0px;
+    padding-right: 1px;
+    padding-bottom: 0px;
+}
+
+.dialog #iconImage {
+    hidden: true;
+}
+
+.dialog-footer-container .button {
+    background-color: white;
+    border: 1px thin white;
+    color: #000088;
+}
+
+.modal-background {
+    backdrop-filter: greyscale;
+    background-color: none;
+}
+
+.messagebox #messageLabel {
+    color: white;
+}

@@ -1,17 +1,32 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<module>
+<module id="haxeui-pdcurses" priority="-1">
     <resources>
-        <resource path="/haxe/ui/backend/pdcurses/_module/styles" prefix="styles" />
+        <resource path="/haxe/ui/backend/pdcurses/_module/styles" prefix="haxeui-pdcurses/styles" />
     </resources>
     <themes>
         <global>
-            <style resource="styles/main.css" />
+            <style resource="haxeui-pdcurses/styles/main.css" />
         </global>
         <default>
-            <style resource="styles/default/main.css" />
+            <style resource="haxeui-pdcurses/styles/default/main.css" />
+            <style resource="haxeui-pdcurses/styles/default/buttons.css" />
+            <style resource="haxeui-pdcurses/styles/default/checkboxes.css" />
+            <style resource="haxeui-pdcurses/styles/default/frames.css" />
+            <style resource="haxeui-pdcurses/styles/default/scrollbars.css" />
+            <style resource="haxeui-pdcurses/styles/default/scrollviews.css" />
+            <style resource="haxeui-pdcurses/styles/default/listviews.css" />
+            <style resource="haxeui-pdcurses/styles/default/tabs.css" />
+            <style resource="haxeui-pdcurses/styles/default/ranges.css" />
+            <style resource="haxeui-pdcurses/styles/default/progressbars.css" />
+            <style resource="haxeui-pdcurses/styles/default/menus.css" />
+            <style resource="haxeui-pdcurses/styles/default/dropdowns.css" />
+            <style resource="haxeui-pdcurses/styles/default/dialogs.css" />
+            <style resource="haxeui-pdcurses/styles/default/textinputs.css" />
+            <style resource="haxeui-pdcurses/styles/default/tableviews.css" />
         </default>
-        <green parent="default">
-            <style resource="styles/green/main.css" />
-        </green>
+        <dark parent="default">
+        </dark>
+        <pascal parent="default">
+        </pascal>
     </themes>
 </module>

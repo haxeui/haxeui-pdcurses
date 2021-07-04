@@ -1,0 +1,59 @@
+.scrollview {
+    border: 1px single #000088;
+    background-color: none;
+}
+
+.scrollview-contents {
+    padding-left: 1px;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-right: 0px;
+}
+
+
+
+.scrollview .horizontal-scroll {
+    margin-top: 1px;
+    margin-right: 1px;
+}
+
+.scrollview .vertical-scroll {
+    margin-left: 1px;
+}
+
+/*
+
+.horizontal-scroll {
+    height: 1px;
+    border: none;
+    padding: 0;
+    
+    
+    filter: none;
+    background-image: 'CKBOARD';
+    background-color: #FFFFFF;
+    color: #000080;
+}
+
+.horizontal-scroll .thumb {
+    background-color: red;
+    filter: none;
+}
+
+.vertical-scroll .thumb {
+    background-color: red;
+    filter: none;
+}
+
+.vertical-scroll {
+    width: 1px;
+    border: none;
+    padding: 0;
+    
+    
+    filter: none;
+    background-image: 'CKBOARD';
+    background-color: #FFFFFF;
+    color: #000080;
+}
+*/

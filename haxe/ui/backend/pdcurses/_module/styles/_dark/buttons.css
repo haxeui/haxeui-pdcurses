@@ -1,0 +1,19 @@
+.button {
+    border: 1px thin #000088;
+    padding: 1px 1px;
+    color: #ffffff;
+    background-color: #000088;
+    filter: drop-shadow(.5, 1, #888888);
+    spacing: 1px;
+}
+
+.button:hover {
+    background-color: #0000FF;
+    border-color: #0000FF;
+}
+
+.button:down {
+    background-color: #000088;
+    border-color: #000088;
+    filter: drop-shadow(0, 0, #888888);
+}

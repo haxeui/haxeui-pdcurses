@@ -1,0 +1,15 @@
+.dropdown {
+    border: 1px outset;
+    icon: 'DARROW'
+}
+
+.dropdown:down {
+    border: 1px outset;
+    icon: 'UARROW'
+}
+
+.dropdown-popup {
+    border: 1px dropdownpopup;
+    padding: 1px;
+    background-color: none;
+}

@@ -1,6 +1,7 @@
 package haxe.ui.backend;
 
-import haxe.ui.backend.pdcurses.AppHelper;
+import haxe.ui.backend.pdcurses.CursesApp;
+import haxe.ui.backend.pdcurses.Mouse;
 import haxe.ui.core.Component;
 import haxe.ui.events.MouseEvent;
 import haxe.ui.events.UIEvent;
@@ -20,30 +21,48 @@ class ScreenImpl extends ScreenBase {
         return app.terminalHeight;
     }
 
-    private var app(get, null):AppHelper;
-    private function get_app():AppHelper {
+    private var app(get, null):CursesApp;
+    private function get_app():CursesApp {
         return options.app;
     }
-    
-    public override function addComponent(component:Component) {
+
+    public override function addComponent(component:Component):Component {
         if (component.percentWidth != null) {
             component.width = (component.percentWidth * width) / 100;
         }
         if (component.percentHeight != null) {
             component.height = (component.percentHeight * height) / 100;
         }
-        app.addTopLevelWindow(component.window);
+		return component;
     }
-
-    public override function removeComponent(component:Component) {
-    }
-
-    private override function handleSetComponentIndex(child:Component, index:Int) {
-    }
-
+        
     //***********************************************************************************************************
     // Events
     //***********************************************************************************************************
+    private var _hasMouseMoveListener:Bool = false;
+    private function addMouseMoveListener() {
+        if (_hasMouseMoveListener == false) {
+            Mouse.listen(Mouse.MOVE, _onMouseMove);
+            _hasMouseMoveListener = true;
+        }
+    }
+    
+    private var _hasMousePressedListener:Bool = false;
+    private function addMousePressedListener() {
+        if (_hasMousePressedListener == false) {
+            Mouse.listen(Mouse.PRESSED, _onMousePressed);
+            _hasMousePressedListener = true;
+        }
+    }
+    
+    private var _hasMouseReleasedListener:Bool = false;
+    private function addMouseReleasedListener() {
+        if (_hasMouseReleasedListener == false) {
+            Mouse.listen(Mouse.RELEASED, _onMouseReleased);
+            _hasMouseReleasedListener = true;
+        }
+    }
+    
     private override function supportsEvent(type:String):Bool {
         switch (type) {
             case MouseEvent.MOUSE_DOWN:
@@ -55,26 +74,46 @@ class ScreenImpl extends ScreenBase {
         }
         return false;
     }
-
+    
+    private var _hasMouseUpListener:Bool = false;
     private override function mapEvent(type:String, listener:UIEvent->Void) {
         switch (type) {
-            case MouseEvent.MOUSE_DOWN:
-                _mapping.set(type, listener);
-            case MouseEvent.MOUSE_UP:
-                _mapping.set(type, listener);
             case MouseEvent.MOUSE_MOVE:
-                _mapping.set(type, listener);
+                if (_mapping.exists(type) == false) {
+                    _mapping.set(type, listener);
+                    addMouseMoveListener();
+                }
+            case MouseEvent.MOUSE_DOWN:
+                if (_mapping.exists(type) == false) {
+                    _mapping.set(type, listener);
+                    addMousePressedListener();
+                }
+            case MouseEvent.MOUSE_UP:
+                if (_mapping.exists(type) == false) {
+                    _mapping.set(type, listener);
+                    addMouseReleasedListener();
+                }
         }
     }
-
-    private override function unmapEvent(type:String, listener:UIEvent->Void) {
-        switch (type) {
-            case MouseEvent.MOUSE_DOWN:
-                _mapping.remove(type);
-            case MouseEvent.MOUSE_UP:
-                _mapping.remove(type);
-            case MouseEvent.MOUSE_MOVE:
-                _mapping.remove(type);
-        }
+    
+    private function _onMouseMove(x:Int, y:Int) {
+        var event = new MouseEvent(MouseEvent.MOUSE_MOVE);
+        event.screenX = x;
+        event.screenY = y;
+        _mapping.get(MouseEvent.MOUSE_MOVE)(event);
+    }
+    
+    private function _onMousePressed(x:Int, y:Int) {
+        var event = new MouseEvent(MouseEvent.MOUSE_DOWN);
+        event.screenX = x;
+        event.screenY = y;
+        _mapping.get(MouseEvent.MOUSE_DOWN)(event);
+    }
+    
+    private function _onMouseReleased(x:Int, y:Int) {
+        var event = new MouseEvent(MouseEvent.MOUSE_UP);
+        event.screenX = x;
+        event.screenY = y;
+        _mapping.get(MouseEvent.MOUSE_UP)(event);
     }
 }

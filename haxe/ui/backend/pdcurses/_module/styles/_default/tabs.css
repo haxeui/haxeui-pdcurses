@@ -1,0 +1,34 @@
+.tabbar {
+    horizontal-spacing: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.tabview > .tabview-content {
+    border: 1px outset;
+    padding: 1px 1px;
+    color: #000000;
+    margin-top: -1px;
+    background-color: none;
+}
+
+.tabview > .tabview-tabs {
+    margin-top: 0px;
+}
+
+.tabbar-button {
+    border: 1px tabbutton;
+}
+
+.tabbar-button.first {
+    border: 1px firsttabbutton;
+}
+
+.tabbar-button-selected {
+    border: 1px selectedtabbutton;
+    background-color: none;
+}
+
+.tabbar-button-selected.first {
+    border: 1px firstselectedtabbutton;
+}

@@ -1,0 +1,53 @@
+.tableview {
+    background-color: none;
+    __padding-top: 2px;
+    __border-top: 1px solid #000088;
+    __padding-top: 2px;
+    border: 1px tableview #000088;
+}
+
+.tableview .tableview-contents {
+    spacing: 0;
+    width: 100%;
+    padding: 1px;
+    padding-top: 0;
+    padding-bottom: 0px;
+}
+
+.tableview .even {
+    background-color: none;
+    cursor: pointer;
+}
+
+.tableview .odd {
+    background-color: none;
+    cursor: pointer;
+}
+
+.tableview .compounditemrenderer .itemrenderer {
+    height: auto;
+    padding: 0px;
+}
+
+.tableview .compounditemrenderer .label {
+    color: black;
+}
+
+.tableview .compounditemrenderer:selected {
+    background-color: #0000FF;
+    color: white;
+}
+
+.tableview .compounditemrenderer:selected .label {
+    color: white;
+}
+
+.header {
+    spacing: 0;
+    __margin-top: -1px;
+}
+
+.header .button {
+    filter: none;
+    __border-top: 1px solid red;
+}

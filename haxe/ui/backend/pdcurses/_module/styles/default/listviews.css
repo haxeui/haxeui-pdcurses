@@ -1,0 +1,59 @@
+.listview {
+    background-color: none;
+}
+
+.listview .itemrenderer {
+    height: auto;
+    padding: 0px;
+    background-color: none;
+    padding-right: 1px;
+}
+
+.listview .itemrenderer .label {
+}
+
+.listview .even .label {
+}
+
+.listview .odd .label {
+}
+
+.listview .itemrenderer:selected {
+    color: #ffffff;
+    background-color: #000088;
+}
+
+.listview .itemrenderer:selected .basic-renderer-label {
+    color: #ffffff;
+    background-color: #000088;
+}
+
+
+
+
+
+
+.listview .listview-contents {
+    spacing: 0;
+    padding-left: 1px;
+    padding-right: -1px;
+}
+
+.listview .itemrenderer {
+    ____padding-right: 2px;
+}
+
+.listview .itemrenderer:selected {
+    color: #ffffff;
+    background-color: #0000ff;
+}
+
+.listview .itemrenderer:selected .basic-renderer-label {
+    color: #ffffff;
+    background-color: #0000ff;
+}
+
+.listview .button {
+    filter: none;
+}
+

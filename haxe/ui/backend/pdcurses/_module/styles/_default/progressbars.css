@@ -1,0 +1,27 @@
+.horizontal-progress {
+    height: 1px;
+    initial-width: 20px;
+    color: #888888;
+    border: none;
+    padding: 0;
+    background-image: 'CKBOARD'
+}
+
+.horizontal-progress .progress-value {
+    background-color: #000088;
+    border: none;
+}
+
+.vertical-progress {
+    width: 1px;
+    initial-height: 10px;
+    color: #888888;
+    border: none;
+    padding: 0;
+    background-image: 'CKBOARD'
+}
+
+.vertical-progress .progress-value {
+    background-color: #000088;
+    border: none;
+}

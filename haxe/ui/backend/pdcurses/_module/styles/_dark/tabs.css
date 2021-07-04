@@ -1,0 +1,62 @@
+.tabbar {
+    background-color: none;
+    border-bottom: 1px thin-inverse #888888;
+}
+
+.tabbar:bottom {
+    background-color: none;
+    border-bottom: none;
+    border-top: 1px thin-inverse #888888;
+}
+
+.tabbar > .tabbar-contents {
+    spacing: 0;
+}
+
+.tabbar-button {
+    background-color: #000088;
+    border:1px thin #000088;
+    filter: none;
+}
+
+.tabbar-button:hover {
+    background-color: #0000FF;
+    border: 1px thin #0000FF;
+    filter: none;
+}
+
+.tabbar-button-selected {
+    color: #000088;
+    background-color: #888888;
+    border-color: #888888;
+    border-bottom: 1px thin #888888;
+}
+
+
+
+.tabview > .tabview-tabs {
+    margin-top: 0px;
+}
+
+.tabview > .tabview-content {
+    margin-top: 0px;
+    border: none;
+    border-bottom: 1px thin #888888;
+    filter: drop-shadow(.5, 1, #000000);
+    padding-top: 0px;
+    padding-left: 1px;
+    padding-bottom: 1px;
+    padding-right: 1px;
+    background-color: #888888;
+}
+
+.tabview:bottom > .tabview-tabs {
+    margin-top: 0px;
+}
+
+.tabview:bottom > .tabview-content {
+    margin-top: 0px;
+    border: none;
+    border-top: 1px thin #888888;
+    filter: drop-shadow(.5, 1, #000000);
+}

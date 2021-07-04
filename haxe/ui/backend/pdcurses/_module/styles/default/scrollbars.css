@@ -1,0 +1,101 @@
+.scroll {
+    color: #000088;
+}
+
+.scroll .button {
+    color: #000088;
+    filter: none;
+}
+
+.scroll .image {
+    background-color: #000088;
+    color: #ffffff;
+}
+
+.scroll .deinc {
+    height: 1px;
+    width: 1px;
+    border: none;
+    color: #ffffff;
+    padding: 0;
+    background-image: 'BLOCK'
+    filter: none;
+}
+
+.scroll .deinc .image {
+    background-color: #888888;
+    color: #ffffff;
+}
+
+.scroll .inc {
+    height: 1px;
+    width: 1px;
+    border: none;
+    color: #888888;
+    padding: 0;
+    background-image: 'BLOCK'
+    filter: none;
+}
+
+.scroll .inc .image {
+    background-color: #888888;
+    color: #ffffff;
+}
+
+/************************************************************************
+** HORIZONTAL SCROLL
+*************************************************************************/
+.horizontal-scroll {
+    height: 1px;
+    background-color: #888888;
+    color: #ffffff;
+    padding: 0;
+    background-image: 'CKBOARD'
+}
+
+.horizontal-scroll .thumb {
+    width: 1px;
+    height: 1px;
+    border: none;
+    color: #888888;
+    padding: 0;
+    background-image: 'BLOCK'
+    filter: none;
+}
+
+.horizontal-scroll .deinc {
+    icon: "LARROW";
+}
+
+.horizontal-scroll .inc {
+    icon: "RARROW";
+}
+
+/************************************************************************
+** VERTICAL SCROLL
+*************************************************************************/
+.vertical-scroll {
+    width: 1px;
+    background-color: #888888;
+    color: #ffffff;
+    padding: 0;
+    background-image: 'CKBOARD'
+}
+
+.vertical-scroll .thumb {
+    width: 1px;
+    height: 1px;
+    border: none;
+    color: #888888;
+    padding: 0;
+    background-image: 'BLOCK'
+    filter: none;
+}
+
+.vertical-scroll .deinc {
+    icon: "UARROW";
+}
+
+.vertical-scroll .inc {
+    icon: "DARROW";
+}

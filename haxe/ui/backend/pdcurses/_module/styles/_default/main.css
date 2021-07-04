@@ -1,0 +1,18 @@
+.hi {
+    __color: #00ff00;
+}
+
+.lo {
+    __color: #000000;
+}
+
+.mid {
+    __color: #008800;
+}
+
+.component {
+}
+
+.label {
+    color: #000000;
+}

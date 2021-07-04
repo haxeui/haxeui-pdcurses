@@ -1,0 +1,54 @@
+.checkbox {
+    spacing: 1px;
+    color: #000080;
+}
+
+.checkbox:hover {
+    color: #0000FF;
+}
+
+.checkbox-value {
+    width: 3px;
+    height: 1px;
+    background-color: none;
+    border: 1px square-brackets #000088;
+    filter: none;
+    icon: none;
+    color: #0000FF;
+}
+
+.checkbox:hover .checkbox-value {
+    border-color: #0000FF;
+}
+
+.checkbox-value:selected {
+    background-image: 'X';
+}
+
+.optionbox {
+    spacing: 1px;
+    color: #000080;
+}
+
+.optionbox:hover {
+    color: #0000FF;
+}
+
+.optionbox-value {
+    width: 3px;
+    height: 1px;
+    background-color: none;
+    border: 1px round-brackets #000088;
+    filter: none;
+    icon: none;
+    color: #0000FF;
+}
+
+.optionbox:hover .optionbox-value {
+    border-color: #0000FF;
+}
+
+.optionbox-value:selected {
+    background-image: 'O_SMALL';
+}
+

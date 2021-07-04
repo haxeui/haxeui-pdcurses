@@ -1,0 +1,28 @@
+.listview {
+    background-color: none;
+}
+
+.listview .itemrenderer {
+    height: auto;
+    padding: 0px;
+    background-color: none;
+}
+
+.listview .itemrenderer .label {
+}
+
+.listview .even .label {
+}
+
+.listview .odd .label {
+}
+
+.listview .itemrenderer:selected {
+    color: #ffffff;
+    background-color: #000088;
+}
+
+.listview .itemrenderer:selected .basic-renderer-label {
+    color: #ffffff;
+    background-color: #000088;
+}
