@@ -6,5 +6,5 @@
 pdcurses text only backend for haxeui
 
 <p align="center">
-	<img src="https://github.com/haxeui/haxeui-pdcurses/raw/master/screen.png" />
+	<img src="https://github.com/haxeui/haxeui-pdcurses/raw/master/.github/images/screen.png" />
 </p>
