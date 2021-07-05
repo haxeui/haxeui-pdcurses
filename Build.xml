@@ -1,5 +1,5 @@
 <xml>
-    <set name="lib_folder" value="${haxelib:haxeui-pdcurses2}/lib" />
+    <set name="lib_folder" value="${haxelib:haxeui-pdcurses}/lib" />
     
     <section if="windows">
         <files id="haxe">
