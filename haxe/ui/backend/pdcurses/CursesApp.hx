@@ -128,7 +128,7 @@ class CursesApp {
             displayMouseCursor(backbuffer);
             
             wrefresh(backbuffer);
-            //Sys.sleep(delay);
+            Sys.sleep(delay);
             _loopCount++;
         }
     }
