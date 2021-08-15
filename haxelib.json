@@ -1,13 +1,20 @@
 {
-    "name": "haxeui-pdcurses",
-    "url": "https://github.com/haxeui/haxeui-pdcurses",
-    "license": "MIT",
-    "tags": ["ui", "gui", "pdcurses"],
-    "description": "The pdcurses backend of the HaxeUI framework",
-    "version": "0.0.1",
-    "releasenote": "Initial release",
-    "contributors": ["haxeui", "ianharrigan"],
+    "contributors": [
+        "haxeui",
+        "ianharrigan"
+    ],
+    "version": "1.3.0",
     "dependencies": {
         "hscript": ""
-    }
+    },
+    "releasenote": "1.3 release",
+    "tags": [
+        "ui",
+        "gui",
+        "pdcurses"
+    ],
+    "license": "MIT",
+    "name": "haxeui-pdcurses",
+    "description": "The pdcurses backend of the HaxeUI framework",
+    "url": "https://github.com/haxeui/haxeui-pdcurses"
 }
