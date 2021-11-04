@@ -4,7 +4,10 @@
 }
 
 .frame-contents {
-    border: none;
+    border-top: none;
+    border-left: 1px single #000080;
+    border-right: 1px single #000080;
+    border-bottom: 1px single #000080;
     padding: 1px;
     padding-top: 0px;
     padding-left: 2px;
