@@ -4,6 +4,7 @@ import cpp.Pointer;
 import cpp.RawPointer;
 import haxe.ValueException;
 import haxe.ui.backend.TimerImpl;
+import haxe.ui.backend.pdcurses.Keyboard;
 import haxe.ui.backend.pdcurses.lib.Curses.*;
 import haxe.ui.backend.pdcurses.lib.MEVENT;
 import haxe.ui.backend.pdcurses.lib.WINDOW;
@@ -72,6 +73,7 @@ class CursesApp {
             }
             
             TimerImpl.update();
+            Keyboard.update(ch);
             
             wclear(backbuffer);
             
