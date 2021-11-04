@@ -5,3 +5,7 @@ default-background {
 .image {
     color: #000000;
 }
+
+.label {
+    background-color: none;
+}
