@@ -139,6 +139,12 @@ class Color {
     }
     
     public static function approximateColor(i:Int, defaultColor:Int = Color.WHITE):Int {
+        if (i == -1 && defaultColor == -1) {
+            return -1;
+        }
+        return toANSI(getR(i), getG(i), getB(i));
+        
+        /*
         var n = defaultColor;
         switch (i) {
             case 0x000000:  n = Color.BLACK;
@@ -167,6 +173,7 @@ class Color {
             case 0xFFFFFF:  n = Color.BRIGHT_WHITE;
         }
         return n;
+        */
     }
     
     public static function brighten(i:Int):Int {
