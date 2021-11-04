@@ -3,10 +3,12 @@ package haxe.ui.backend.pdcurses;
 import cpp.Pointer;
 import cpp.RawPointer;
 import haxe.ValueException;
+import haxe.ui.backend.TimerImpl;
 import haxe.ui.backend.pdcurses.lib.Curses.*;
 import haxe.ui.backend.pdcurses.lib.MEVENT;
 import haxe.ui.backend.pdcurses.lib.WINDOW;
 import haxe.ui.core.Screen;
+import haxe.ui.util.Timer;
 
 @:headerInclude("curses.h")
 class CursesApp {
@@ -24,6 +26,7 @@ class CursesApp {
         nodelay(stdscr, true);
         curs_set(0);
         keypad(stdscr, true);
+        noecho();
         
         terminalWidth = getmaxx(stdscr);
         terminalHeight = getmaxy(stdscr);
@@ -67,6 +70,8 @@ class CursesApp {
                 backbuffer = newwin(0, 0, 0, 0);
                 wbkgd(backbuffer, COLOR_PAIR(Color.find(Color.MID_COL, Color.MID_COL)));
             }
+            
+            TimerImpl.update();
             
             wclear(backbuffer);
             
