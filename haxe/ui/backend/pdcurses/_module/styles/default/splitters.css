@@ -1,7 +1,22 @@
+.vertical-splitter {
+    spacing: 0;
+}
+
 .vertical-splitter-gripper {
     height: 1px;
     border: none;
     border-top: 1px single #C0C0C0;
+    margin-left: 1px;
+    margin-right: 1px;
+    background-color: none;
+}
+
+.vertical-splitter-gripper:hover {
+    background-color: none;
+}
+
+.horizontal-splitter {
+    spacing: 0;
 }
 
 .horizontal-splitter-gripper {
@@ -9,4 +24,10 @@
     border: none;
     border-left: 1px single #C0C0C0;
     margin-top: 1px;
+    margin-bottom: 1px;
+    background-color: none;
+}
+
+.horizontal-splitter-gripper:hover {
+    background-color: none;
 }
