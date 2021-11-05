@@ -72,8 +72,8 @@ class ComponentImpl extends ComponentBase {
             for (y in sy...h) {
                 for (x in sx...w) {
                     var info = window.info(x, y);
-                    window.drawChar(x, y, Color.darken(info.fg), Color.darken(info.bg), info.char);
-                    window.drawChar(x, y, Color.greyscale(info.fg), Color.greyscale(info.bg), info.char);
+                    window.drawChar(x, y, Color.darken(info.fg), Color.darken(info.bg), info.char, false);
+                    window.drawChar(x, y, Color.greyscale(info.fg), Color.greyscale(info.bg), info.char, false);
                 }
             }
         }

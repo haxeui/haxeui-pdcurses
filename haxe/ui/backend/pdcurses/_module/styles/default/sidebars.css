@@ -1,0 +1,27 @@
+.sidebar-modal-background {
+    backdrop-filter: greyscale;
+    background-color: none;
+}
+
+.sidebar {
+    padding: 1px;
+    filter: none;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+.sidebar:left {
+    border-right: 1px single #000080;
+}
+
+.sidebar:right {
+    border-left: 1px single #000080;
+}
+
+.sidebar:top {
+    border-bottom: 1px single #000080;
+}
+
+.sidebar:bottom {
+    border-top: 1px single #000080;
+}

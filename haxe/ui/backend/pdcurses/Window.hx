@@ -137,14 +137,16 @@ class Window {
         }
     }
     
-    public function drawChar(x:Int, y:Int, fg:Int = -1, bg:Int = -1, char:Int = -1) {
+    public function drawChar(x:Int, y:Int, fg:Int = -1, bg:Int = -1, char:Int = -1, approximate:Bool = true) {
         if (clipRect != null && clipRect.containsPoint(x, y) == false) {
             return;
         }
         
         var i = info(x, y);
-        fg = Color.approximateColor(fg, fg);
-        bg = Color.approximateColor(bg, bg);
+        if (approximate == true) {
+            fg = Color.approximateColor(fg, fg);
+            bg = Color.approximateColor(bg, bg);
+        }
         var fgOnlyLookup = (i.char == Chars.HALF_BLOCK_BOTTOM || i.char == Chars.HALF_BLOCK_TOP || i.char == Chars.BLOCK);
         
         if (fg == -1) {
