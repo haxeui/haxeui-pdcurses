@@ -23,6 +23,7 @@
             <style resource="haxeui-pdcurses/styles/default/dialogs.css" />
             <style resource="haxeui-pdcurses/styles/default/textinputs.css" />
             <style resource="haxeui-pdcurses/styles/default/tableviews.css" />
+            <style resource="haxeui-pdcurses/styles/default/splitters.css" />
         </default>
         <dark parent="default">
         </dark>

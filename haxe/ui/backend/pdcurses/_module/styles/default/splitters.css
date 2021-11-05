@@ -1,0 +1,11 @@
+.vertical-splitter-gripper {
+    height: 1px;
+    border: none;
+    border-top: 1px single #888888;
+}
+
+.horizontal-splitter-gripper {
+    width: 1px;
+    border: none;
+    border-left: 1px single #888888;
+}
