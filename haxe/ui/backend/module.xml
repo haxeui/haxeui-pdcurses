@@ -26,6 +26,7 @@
             <style resource="haxeui-pdcurses/styles/default/splitters.css" />
         </default>
         <dark parent="default">
+            <style resource="haxeui-pdcurses/styles/dark/main.css" />
         </dark>
     </themes>
 </module>

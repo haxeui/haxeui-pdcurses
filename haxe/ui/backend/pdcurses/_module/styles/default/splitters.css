@@ -1,11 +1,12 @@
 .vertical-splitter-gripper {
     height: 1px;
     border: none;
-    border-top: 1px single #888888;
+    border-top: 1px single #C0C0C0;
 }
 
 .horizontal-splitter-gripper {
     width: 1px;
     border: none;
-    border-left: 1px single #888888;
+    border-left: 1px single #C0C0C0;
+    margin-top: 1px;
 }

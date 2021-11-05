@@ -7,11 +7,12 @@
     border-top: none;
     border-left: 1px single #000080;
     border-right: 1px single #000080;
-    border-bottom: 1px single #000080;
+    border-bottom: none;
     padding: 1px;
     padding-top: 0px;
     padding-left: 2px;
     padding-right: 2px;
+    padding-bottom: 2px;
 }
 
 .frame-left-line, .frame-right-line {
