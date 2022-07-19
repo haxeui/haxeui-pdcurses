@@ -12,7 +12,7 @@
     ],
     "releasenote": "1.4.0 release",
     "dependencies": {
-        "hscript": ""
+        "haxeui-core": ""
     },
     "name": "haxeui-pdcurses",
     "description": "The pdcurses backend of the HaxeUI framework",
