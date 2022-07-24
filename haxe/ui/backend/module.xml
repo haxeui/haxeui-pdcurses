@@ -18,6 +18,7 @@
             <style resource="haxeui-pdcurses/styles/default/tabs.css" />
             <style resource="haxeui-pdcurses/styles/default/ranges.css" />
             <style resource="haxeui-pdcurses/styles/default/progressbars.css" />
+            <style resource="haxeui-pdcurses/styles/default/sliders.css" />
             <style resource="haxeui-pdcurses/styles/default/menus.css" />
             <style resource="haxeui-pdcurses/styles/default/dropdowns.css" />
             <style resource="haxeui-pdcurses/styles/default/dialogs.css" />
@@ -25,6 +26,7 @@
             <style resource="haxeui-pdcurses/styles/default/tableviews.css" />
             <style resource="haxeui-pdcurses/styles/default/splitters.css" />
             <style resource="haxeui-pdcurses/styles/default/sidebars.css" />
+            <style resource="haxeui-pdcurses/styles/default/steppers.css" />
         </default>
         <dark parent="default">
             <style resource="haxeui-pdcurses/styles/dark/main.css" />

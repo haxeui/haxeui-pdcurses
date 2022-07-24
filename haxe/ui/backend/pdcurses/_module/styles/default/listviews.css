@@ -6,10 +6,11 @@
     height: auto;
     padding: 0px;
     background-color: none;
-    padding-right: 1px;
+    __padding-right: 1px;
 }
 
 .listview .itemrenderer .label {
+    background-color: none;
 }
 
 .listview .even .label {
@@ -35,8 +36,8 @@
 
 .listview .listview-contents {
     spacing: 0;
-    padding-left: 1px;
-    padding-right: -1px;
+    padding-left: 0px;
+    __padding-right: -1px;
 }
 
 .listview .itemrenderer {

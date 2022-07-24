@@ -11,6 +11,7 @@ extern class Curses {
     @:native("initscr")                     public static function initscr():Void;
     @:native("start_color")                 public static function start_color():Void;
     @:native("raw")                         public static function raw():Void;
+    @:native("raw_output")                  public static function raw_output(raw:Bool):Void;
     @:native("nodelay")                     public static function nodelay(w:RawPointer<WINDOW>, b:Bool):Void;
     @:native("noecho")                      public static function noecho():Void;
     @:native("cbreak")                      public static function cbreak():Void;
@@ -65,6 +66,7 @@ extern class Curses {
     
     
     @:native("PDC_set_title")               public static function PDC_set_title(title:ConstCharStar):Void;
+    @:native("PDC_get_key_modifiers")       public static function PDC_get_key_modifiers():Int;
     
     @:native("BUTTON1_PRESSED")             public static var BUTTON1_PRESSED:Int;
     @:native("BUTTON1_RELEASED")            public static var BUTTON1_RELEASED:Int;
@@ -86,6 +88,10 @@ extern class Curses {
     @:native("BUTTON5_RELEASED")            public static var BUTTON5_RELEASED:Int;
     @:native("BUTTON5_CLICKED")             public static var BUTTON5_CLICKED:Int;
 
+    @:native("PDC_BUTTON_SHIFT")            public static var PDC_BUTTON_SHIFT:Int;
+    @:native("PDC_BUTTON_CONTROL")          public static var PDC_BUTTON_CONTROL:Int;
+    @:native("PDC_BUTTON_ALT")              public static var PDC_BUTTON_ALT:Int;
+    
     @:native("MOUSE_WHEEL_SCROLL")          public static var MOUSE_WHEEL_SCROLL:Int;
     
     @:native("ALL_MOUSE_EVENTS")            public static var ALL_MOUSE_EVENTS:Int;

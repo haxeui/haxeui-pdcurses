@@ -50,6 +50,9 @@ class Image {
             case "O_LARGE":             return Chars.O_LARGE;
         }
         return -1;
-        
+    }
+    
+    public static function isCharImage(c:Int) {
+        return (c == Chars.LARROW || c == Chars.RARROW || c == Chars.UARROW || c == Chars.DARROW);
     }
 }

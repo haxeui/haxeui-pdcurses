@@ -1,11 +1,18 @@
 .dropdown {
     __border: 1px outset;
-    icon: 'DARROW'
+    icon: 'DARROW';
+    __filter: none;
 }
 
 .dropdown:down {
     __border: 1px outset;
     icon: 'UARROW'
+}
+
+.dropdown .image {
+    background-color: none;
+    color: white;
+    border: none;
 }
 
 .dropdown-popup {
@@ -46,13 +53,16 @@
     background-color: #C0C0C0;
     filter: none;
     border: none;
-    padding: 0;
+    __padding: 1px;
     padding-left: 1px;
     padding-top: 1px;
     padding-right: 1px;
     padding-bottom: 1px;
-    border: 1px thin #C0C0C0;
+    border-top: 1px thin #000080;
+    border-bottom: 1px thin #000080;
     filter: drop-shadow(.5, 1, #888888);
+    
+    background-color: #000080;
 }
 
 .dropdown-popup .listview {
@@ -61,6 +71,20 @@
     __background-color: #C0C0C0;
 }
 
+.dropdown-popup .listview .listview-contents {
+    __padding: 1px;
+}
+
+.dropdown-popup .listview .label {
+    color: white;
+}
+
 .dropdown-popup .listview .vertical-scroll {
     margin-left: 0;
+    color: white;
+}
+
+.dropdown-popup .listview .vertical-scroll .thumb {
+    color: white;
+    background-color: white;
 }

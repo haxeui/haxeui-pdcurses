@@ -33,6 +33,9 @@
 }
 
 
+.tabview {
+    padding-bottom: 1px;
+}
 
 .tabview > .tabview-tabs {
     margin-top: 0px;

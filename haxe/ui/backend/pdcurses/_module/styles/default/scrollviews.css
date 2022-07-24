@@ -1,6 +1,7 @@
 .scrollview {
     border: 1px single #000088;
     background-color: none;
+    padding-right: 1px;
 }
 
 .scrollview-contents {
@@ -10,15 +11,29 @@
     padding-right: 0px;
 }
 
-
-
 .scrollview .horizontal-scroll {
     margin-top: 1px;
     margin-right: 1px;
 }
 
 .scrollview .vertical-scroll {
-    margin-left: 1px;
+    margin-left: 2px;
+}
+
+.scrollview:active {
+    border-color: #0000FF;
+}
+
+.scrollview:active .scroll {
+    __background-color: #0000FF;
+    color: #0000FF;
+    __border-color: #0000FF;
+}
+
+.scrollview:active .scroll .thumb {
+    background-color: #0000FF;
+    __color: #0000FF;
+    ___border-color: #0000FF;
 }
 
 /*

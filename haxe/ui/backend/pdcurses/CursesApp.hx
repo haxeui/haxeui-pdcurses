@@ -2,10 +2,12 @@ package haxe.ui.backend.pdcurses;
 
 import cpp.Pointer;
 import cpp.RawPointer;
+import haxe.CallStack;
 import haxe.ValueException;
 import haxe.ui.backend.TimerImpl;
 import haxe.ui.backend.pdcurses.Keyboard;
 import haxe.ui.backend.pdcurses.lib.Curses.*;
+import haxe.ui.backend.pdcurses.lib.Keys;
 import haxe.ui.backend.pdcurses.lib.MEVENT;
 import haxe.ui.backend.pdcurses.lib.WINDOW;
 import haxe.ui.core.Screen;
@@ -48,6 +50,8 @@ class CursesApp {
     public var mouseX:Int = -1;
     public var mouseY:Int = -1;
     
+    public var exit:Bool = false;
+    
     @:access(haxe.ui.backend.CallLaterImpl)
     private function startUnthreaded() {
         var ch = 0;
@@ -58,85 +62,116 @@ class CursesApp {
         wbkgd(backbuffer, COLOR_PAIR(Color.find(Color.MID_COL, Color.MID_COL)));
         
         var button1Pressed = false;
-        while (ch != 27) {
-            ch = wgetch(stdscr);
-            
-            resize_term(0, 0);
-            var tx = getmaxx(stdscr);
-            var ty = getmaxy(stdscr);
-            if (tx != terminalWidth || ty != terminalHeight) {
-                terminalWidth = tx;
-                terminalHeight = ty;
-                delwin(backbuffer);
-                backbuffer = newwin(0, 0, 0, 0);
-                wbkgd(backbuffer, COLOR_PAIR(Color.find(Color.MID_COL, Color.MID_COL)));
-            }
-            
-            TimerImpl.update();
-            Keyboard.update(ch);
-            
-            wclear(backbuffer);
-            
-            if (nc_getmouse(mouseEvent.rawCast()) == OK) {
-                var bstate = mouseEvent.ptr.bstate;
-                var wheel = false;
-                if (bstate & BUTTON4_PRESSED == BUTTON4_PRESSED) {
-                    flushinp();
-                    mouseEvent.ptr.bstate = BUTTON4_RELEASED;
-                    ungetmouse(mouseEvent.rawCast());
-                    wheel = true;
-                    Mouse.update(Mouse.WHEEL_UP, mouseX, mouseY);
-                } else if (bstate & BUTTON5_PRESSED == BUTTON5_PRESSED) {
-                    flushinp();
-                    mouseEvent.ptr.bstate = BUTTON5_RELEASED;
-                    ungetmouse(mouseEvent.rawCast());
-                    
-                    wheel = true;
-                    Mouse.update(Mouse.WHEEL_DOWN, mouseX, mouseY);
-                } else if (bstate & BUTTON4_RELEASED == BUTTON4_RELEASED) {
-                    wheel = true;
-                } else if (bstate & BUTTON5_RELEASED == BUTTON5_RELEASED) {
-                    wheel = true;
+        while (exit == false) {
+            try {
+                ch = wgetch(stdscr);
+                if (ch == Keys.KEY_ESCAPE && Screen.instance.rootComponents.length == 1) {
+                    break;
+                }
+
+                resize_term(0, 0);
+                var tx = getmaxx(stdscr);
+                var ty = getmaxy(stdscr);
+                if (tx != terminalWidth || ty != terminalHeight) {
+                    terminalWidth = tx;
+                    terminalHeight = ty;
+                    delwin(backbuffer);
+                    backbuffer = newwin(0, 0, 0, 0);
+                    wbkgd(backbuffer, COLOR_PAIR(Color.find(Color.MID_COL, Color.MID_COL)));
                 }
                 
-                if (wheel == false) {
-                    var newX = mouseEvent.ptr.x;
-                    var newY = mouseEvent.ptr.y;
-                    if (mouseX != newX || mouseY != newY) {
-                        if (newX > -1) {
-                            mouseX = newX;
+                TimerImpl.update();
+                Keyboard.update(ch);
+                
+                wclear(backbuffer);
+                
+                if (nc_getmouse(mouseEvent.rawCast()) == OK) {
+                    var bstate = mouseEvent.ptr.bstate;
+                    var wheel = false;
+                    if (bstate & BUTTON4_PRESSED == BUTTON4_PRESSED) {
+                        flushinp();
+                        mouseEvent.ptr.bstate = BUTTON4_RELEASED;
+                        ungetmouse(mouseEvent.rawCast());
+                        wheel = true;
+                        Mouse.update(Mouse.WHEEL_UP, mouseX, mouseY);
+                    } else if (bstate & BUTTON5_PRESSED == BUTTON5_PRESSED) {
+                        flushinp();
+                        mouseEvent.ptr.bstate = BUTTON5_RELEASED;
+                        ungetmouse(mouseEvent.rawCast());
+                        
+                        wheel = true;
+                        Mouse.update(Mouse.WHEEL_DOWN, mouseX, mouseY);
+                    } else if (bstate & BUTTON4_RELEASED == BUTTON4_RELEASED) {
+                        wheel = true;
+                    } else if (bstate & BUTTON5_RELEASED == BUTTON5_RELEASED) {
+                        wheel = true;
+                    }
+                    
+                    if (wheel == false) {
+                        var newX = mouseEvent.ptr.x;
+                        var newY = mouseEvent.ptr.y;
+                        if (mouseX != newX || mouseY != newY) {
+                            if (newX > -1) {
+                                mouseX = newX;
+                            }
+                            if (newY > -1) {
+                                mouseY = newY;
+                            }
+                            Mouse.update(Mouse.MOVE, mouseX, mouseY);
                         }
-                        if (newY > -1) {
-                            mouseY = newY;
-                        }
-                        Mouse.update(Mouse.MOVE, mouseX, mouseY);
+                    }
+                    if (bstate & BUTTON1_PRESSED == BUTTON1_PRESSED && button1Pressed == false) {
+                        button1Pressed = true;
+                        Mouse.update(Mouse.PRESSED, mouseX, mouseY);
+                    }
+                    if (bstate & BUTTON1_RELEASED == BUTTON1_RELEASED && button1Pressed == true) {
+                        button1Pressed = false;
+                        Mouse.update(Mouse.RELEASED, mouseX, mouseY);
                     }
                 }
-                if (bstate & BUTTON1_PRESSED == BUTTON1_PRESSED && button1Pressed == false) {
-                    button1Pressed = true;
-                    Mouse.update(Mouse.PRESSED, mouseX, mouseY);
+                /*
+                } catch (e:Dynamic) {
+                    trace("---------------- EXCEPTION!");
+                    var stack:Array<StackItem> = CallStack.exceptionStack(true);
+                    for (s in stack) {
+                        trace(s);
+                    }
+                    trace(e);
                 }
-                if (bstate & BUTTON1_RELEASED == BUTTON1_RELEASED && button1Pressed == true) {
-                    button1Pressed = false;
-                    Mouse.update(Mouse.RELEASED, mouseX, mouseY);
+                */
+                
+                while (CallLaterImpl._fns.length > 0) {
+                    var fn = CallLaterImpl._fns.shift();
+                    fn();
                 }
+                
+                for (c in Screen.instance.rootComponents) {
+                    c.printTo(backbuffer);
+                }
+                
+                displayDebugInfo(backbuffer);
+                displayMouseCursor(backbuffer);
+                
+                wrefresh(backbuffer);
+                Sys.sleep(delay);
+                _loopCount++;
+            } catch (e:Dynamic) {
+                addLog("EXECEPTION: " + e);
+                addLog("---------- EXCEPTION STACK ----------");
+                logStack(CallStack.exceptionStack(true));
+                addLog("-------------------------------------");
+                addLog("------------- CALL STACK ------------");
+                logStack(CallStack.callStack());
+                addLog("-------------------------------------");
             }
-            
-            while (CallLaterImpl._fns.length > 0) {
-                var fn = CallLaterImpl._fns.shift();
-                fn();
-            }
-            
-            for (c in Screen.instance.rootComponents) {
-                c.printTo(backbuffer);
-            }
-            
-            displayDebugInfo(backbuffer);
-            displayMouseCursor(backbuffer);
-            
-            wrefresh(backbuffer);
-            Sys.sleep(delay);
-            _loopCount++;
+        }
+    }
+    
+    private function logStack(stack:Array<StackItem>) {
+        for (s in stack) {
+            var sb = new StringBuf();
+            @:privateAccess CallStack.itemToString(sb, s);
+            addLog(sb.toString());
         }
     }
     

@@ -93,9 +93,9 @@ class TextDisplayImpl extends TextBase {
                 }
             } else {
                 biggestWidth = Math.max(biggestWidth, tw);
-                if (line != '') {
+                //if (line != '') {
                     _lines.push(line);
-                }
+                //}
             }
         }
 

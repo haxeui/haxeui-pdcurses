@@ -77,7 +77,7 @@ class StyleHelper {
         
         // border
         if (borderTopColor != -1 || borderLeftColor != -1 || borderBottomColor != -1 || borderRightColor != -1) {
-            drawBorder(window, borderStyle, x, y, w, h, backgroundForeColor, borderTopColor, borderLeftColor, borderBottomColor, borderRightColor);
+            drawBorder(window, borderStyle, x, y, w, h, backgroundForeColor, borderTopColor, borderLeftColor, borderBottomColor, borderRightColor, style);
         }
         
         // shadow
@@ -115,7 +115,9 @@ class StyleHelper {
         }
     }
     
-    private static function drawBorder(window:Window, borderStyle:String, x:Int, y:Int, w:Int, h:Int, backgroundColor:Int, borderTopColor:Int, borderLeftColor:Int, borderBottomColor:Int, borderRightColor:Int) {
+    private static function drawBorder(window:Window, borderStyle:String, x:Int, y:Int, w:Int, h:Int, backgroundColor:Int, borderTopColor:Int, borderLeftColor:Int, borderBottomColor:Int, borderRightColor:Int, style:Style) {
+        var hasFilter = (style.filter != null && style.filter.length > 0);
+        
         if (borderStyle == "square-brackets") {
             window.drawChar(x, y, borderLeftColor, -1, 91);
             window.drawChar(x + w - 1, y, borderLeftColor, -1, 93);
@@ -203,6 +205,9 @@ class StyleHelper {
                 bottomLeftChar = borderChars.l;
             } else if (borderBottomColor != -1) {
                 bottomLeftChar = borderChars.b;
+            }
+            if (hasFilter == true && borderStyle == "solid") {
+                bottomLeftChar = 223;
             }
             if (bottomLeftChar != -1) {
                 window.drawChar(x, y + h - 1, oneOf(borderBottomColor, borderLeftColor), (borderChars.useBackgroundColor ? backgroundColor : -1), bottomLeftChar);

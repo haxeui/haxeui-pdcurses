@@ -2,12 +2,14 @@ package haxe.ui.backend;
 
 import cpp.RawPointer;
 import haxe.ui.backend.pdcurses.Color;
+import haxe.ui.backend.pdcurses.Image;
 import haxe.ui.backend.pdcurses.Mouse;
 import haxe.ui.backend.pdcurses.StyleHelper;
 import haxe.ui.backend.pdcurses.Window;
 import haxe.ui.backend.pdcurses.lib.Curses.*;
 import haxe.ui.backend.pdcurses.lib.WINDOW;
 import haxe.ui.core.Component;
+import haxe.ui.core.Screen;
 import haxe.ui.events.MouseEvent;
 import haxe.ui.events.UIEvent;
 import haxe.ui.geom.Rectangle;
@@ -58,7 +60,7 @@ class ComponentImpl extends ComponentBase {
             clipRect = clipComponent.componentClipRect.copy();
             clipRect.left += clipComponent.screenLeft;
             clipRect.top += clipComponent.screenTop;
-            clipRect.width -= 1;
+            clipRect.width += 1;
             if (clipRect.intersects(bounds) == false) {
                 return;
             }
@@ -72,8 +74,12 @@ class ComponentImpl extends ComponentBase {
             for (y in sy...h) {
                 for (x in sx...w) {
                     var info = window.info(x, y);
-                    window.drawChar(x, y, Color.darken(info.fg), Color.darken(info.bg), info.char, false);
-                    window.drawChar(x, y, Color.greyscale(info.fg), Color.greyscale(info.bg), info.char, false);
+                    //window.drawChar(x, y, Color.darken(info.fg), Color.darken(info.bg), info.char, false);
+                    var fg = Color.greyscale(info.fg);
+                    if (fg == Color.BRIGHT_WHITE && isAlphaNumChar(info.char)) {
+                        fg = Color.WHITE;
+                    }
+                    window.drawChar(x, y, fg, Color.greyscale(info.bg), info.char, false);
                 }
             }
         }
@@ -100,6 +106,22 @@ class ComponentImpl extends ComponentBase {
         for (child in childComponents) {
             child.printTo(nativeWindow);
         }
+    }
+
+    private function isAlphaNumChar(c:Int) {
+        if (c >= "a".charCodeAt(0) && c <= "z".charCodeAt(0)) {
+            return true;
+        }
+        if (c >= "A".charCodeAt(0) && c <= "Z".charCodeAt(0)) {
+            return true;
+        }
+        if (c >= "0".charCodeAt(0) && c <= "9".charCodeAt(0)) {
+            return true;
+        }
+        if (Image.isCharImage(c)) {
+            return true;
+        }
+        return false;
     }
     
     private function findClipComponent():Component {
@@ -218,6 +240,9 @@ class ComponentImpl extends ComponentBase {
     private function _onMouseMove(x:Int, y:Int) {
         var inBounds = boundsCheck(x, y);
         if (inBounds == true && _mouseIn == false) {
+            if (hasComponentOver(cast this, x, y)) {
+                return;
+            }
             _mouseIn = true;
             if (_eventMap.exists(MouseEvent.MOUSE_OVER)) {
                 var event = new MouseEvent(MouseEvent.MOUSE_OVER);
@@ -240,6 +265,9 @@ class ComponentImpl extends ComponentBase {
     private function _onMousePressed(x:Int, y:Int) {
         var inBounds = boundsCheck(x, y);
         if (inBounds == true) {
+            if (hasComponentOver(cast this, x, y)) {
+                return;
+            }
             _mouseDown = true;
             if (_eventMap.exists(MouseEvent.MOUSE_DOWN)) {
                 var event = new MouseEvent(MouseEvent.MOUSE_DOWN);
@@ -253,6 +281,9 @@ class ComponentImpl extends ComponentBase {
     private function _onMouseReleased(x:Int, y:Int) {
         var inBounds = boundsCheck(x, y);
         if (inBounds == true && _mouseDown == true) {
+            if (hasComponentOver(cast this, x, y)) {
+                return;
+            }
             if (_eventMap.exists(MouseEvent.CLICK)) {
                 var event = new MouseEvent(MouseEvent.CLICK);
                 event.screenX = x;
@@ -266,6 +297,9 @@ class ComponentImpl extends ComponentBase {
     private function _onMouseWheelDown(x:Int, y:Int) {
         var inBounds = boundsCheck(x, y);
         if (inBounds == true) {
+            if (hasComponentOver(cast this, x, y)) {
+                return;
+            }
             var event = new MouseEvent(MouseEvent.MOUSE_WHEEL);
             event.delta = -1;
             _eventMap.get(MouseEvent.MOUSE_WHEEL)(event);
@@ -275,6 +309,9 @@ class ComponentImpl extends ComponentBase {
     private function _onMouseWheelUp(x:Int, y:Int) {
         var inBounds = boundsCheck(x, y);
         if (inBounds == true) {
+            if (hasComponentOver(cast this, x, y)) {
+                return;
+            }
             var event = new MouseEvent(MouseEvent.MOUSE_WHEEL);
             event.delta = 1;
             _eventMap.get(MouseEvent.MOUSE_WHEEL)(event);
@@ -284,4 +321,49 @@ class ComponentImpl extends ComponentBase {
     //***********************************************************************************************************
     // Util
     //***********************************************************************************************************
+    private function hasComponentOver(ref:Component, x:Int, y:Int):Bool {
+        var array:Array<Component> = getComponentsAtPoint(x, y);
+        if (array.length == 0) {
+            return false;
+        }
+
+        return !hasChildRecursive(cast ref, cast array[array.length - 1]);
+    }
+
+    private function getComponentsAtPoint(x:Int, y:Int):Array<Component> {
+        var array:Array<Component> = new Array<Component>();
+        for (r in Screen.instance.rootComponents) {
+            findChildrenAtPoint(r, x, y, array);
+        }
+        return array;
+    }
+
+    private function findChildrenAtPoint(child:Component, x:Int, y:Int, array:Array<Component>) {
+        if (child.boundsCheck(x, y) == true) {
+            array.push(child);
+            for (c in child.childComponents) {
+                findChildrenAtPoint(c, x, y, array);
+            }
+        }
+    }
+
+    public function hasChildRecursive(parent:Component, child:Component):Bool {
+        if (parent == child) {
+            return true;
+        }
+        var r = false;
+        for (t in parent.childComponents) {
+            if (t == child) {
+                r = true;
+                break;
+            }
+
+            r = hasChildRecursive(t, child);
+            if (r == true) {
+                break;
+            }
+        }
+
+        return r;
+    }
 }

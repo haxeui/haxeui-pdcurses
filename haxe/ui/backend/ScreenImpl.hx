@@ -1,9 +1,11 @@
 package haxe.ui.backend;
 
 import haxe.ui.backend.pdcurses.CursesApp;
+import haxe.ui.backend.pdcurses.Keyboard;
 import haxe.ui.backend.pdcurses.Mouse;
 import haxe.ui.backend.pdcurses.lib.Curses;
 import haxe.ui.core.Component;
+import haxe.ui.events.KeyboardEvent;
 import haxe.ui.events.MouseEvent;
 import haxe.ui.events.UIEvent;
 
@@ -69,6 +71,14 @@ class ScreenImpl extends ScreenBase {
         }
     }
     
+    private var _hasKeyboardPressedListener:Bool = false;
+    private function addKeyboardPressedListener() {
+        if (_hasKeyboardPressedListener == false) {
+            Keyboard.listen(Keyboard.PRESSED, _onKeyPressed);
+            _hasKeyboardPressedListener = true;
+        }
+    }
+    
     private override function supportsEvent(type:String):Bool {
         switch (type) {
             case MouseEvent.MOUSE_DOWN:
@@ -76,6 +86,10 @@ class ScreenImpl extends ScreenBase {
             case MouseEvent.MOUSE_UP:
                 return true;
             case MouseEvent.MOUSE_MOVE:
+                return true;
+            case KeyboardEvent.KEY_DOWN:
+                return true;
+            case KeyboardEvent.KEY_UP:
                 return true;
         }
         return false;
@@ -99,6 +113,16 @@ class ScreenImpl extends ScreenBase {
                     _mapping.set(type, listener);
                     addMouseReleasedListener();
                 }
+            case KeyboardEvent.KEY_DOWN:
+                if (_mapping.exists(type) == false) {
+                    _mapping.set(type, listener);
+                    addKeyboardPressedListener();
+                }
+            case KeyboardEvent.KEY_UP:
+                if (_mapping.exists(type) == false) {
+                    _mapping.set(type, listener);
+                    addKeyboardPressedListener();
+                }
         }
     }
     
@@ -121,5 +145,23 @@ class ScreenImpl extends ScreenBase {
         event.screenX = x;
         event.screenY = y;
         _mapping.get(MouseEvent.MOUSE_UP)(event);
+    }
+    
+    private function _onKeyPressed(ch:Int, shift:Bool) {
+        var fn = _mapping.get(KeyboardEvent.KEY_DOWN);
+        if (fn != null) {
+            var event = new KeyboardEvent(KeyboardEvent.KEY_DOWN);
+            event.keyCode = ch;
+            event.shiftKey = shift;
+            _mapping.get(KeyboardEvent.KEY_DOWN)(event);
+        }
+        
+        var fn = _mapping.get(KeyboardEvent.KEY_UP);
+        if (fn != null) {
+            var event = new KeyboardEvent(KeyboardEvent.KEY_UP);
+            event.keyCode = ch;
+            event.shiftKey = shift;
+            _mapping.get(KeyboardEvent.KEY_UP)(event);
+        }
     }
 }

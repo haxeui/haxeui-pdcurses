@@ -18,6 +18,11 @@
     filter: drop-shadow(0, 0, #888888);
 }
 
+.button:active {
+    background-color: #0000FF;
+    border-color: #0000FF;
+}
+
 .button .image {
     color: #ffffff;
 }

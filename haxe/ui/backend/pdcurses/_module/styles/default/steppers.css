@@ -1,0 +1,111 @@
+.number-stepper {
+    padding: 0px;
+    height: auto;
+    initial-width: 11px;
+    border: 1px single #000080;
+    filter: none;
+    background-color: none;
+}
+
+.number-stepper:active {
+    border-color: #0000ff;
+}
+
+.number-stepper .stepper-value {
+    text-align: center;
+    border: none;
+    background-color: none;
+    filter: none;
+    margin-top: 0px;
+    color: #000080;
+}
+
+.number-stepper .stepper-deinc {
+    icon: 'LARROW';
+    padding-left: 0;
+    padding-right: 0;
+    border: none;
+    background-color: none;
+    color: #000080;
+    filter: none;
+    width: 1px;
+    height: 1px;
+}
+
+.number-stepper .stepper-deinc .image {
+    color: #000080;
+}
+
+.number-stepper .stepper-inc {
+    icon: 'RARROW';
+    padding-left: 0;
+    padding-right: 0;
+    border: none;
+    background-color: none;
+    color: #000080;
+    filter: none;
+    width: 1px;
+    height: 1px;
+}
+
+.number-stepper .stepper-inc .image {
+    color: #000080;
+}
+
+/************************************************************************
+** OPTION STEPPER
+*************************************************************************/
+.option-stepper {
+    padding: 0px;
+    height: auto;
+    initial-width: 16px;
+    border: 1px single #000080;
+    filter: none;
+    background-color: none;
+}
+
+.option-stepper:active {
+    border-color: #0000ff;
+}
+
+.option-stepper .stepper-value {
+    text-align: center;
+    border: none;
+    background-color: none;
+    filter: none;
+    margin-top: 0px;
+    padding: 1px;
+    color: #000080;
+}
+
+.option-stepper .stepper-deinc {
+    icon: 'LARROW';
+    padding-left: 0;
+    padding-right: 0;
+    border: none;
+    background-color: none;
+    color: #000080;
+    filter: none;
+    width: 1px;
+    height: 1px;
+}
+
+.option-stepper .stepper-deinc .image {
+    color: #000080;
+}
+
+.option-stepper .stepper-inc {
+    icon: 'RARROW';
+    padding-left: 0;
+    padding-right: 0;
+    border: none;
+    background-color: none;
+    color: #000080;
+    filter: none;
+    width: 1px;
+    height: 1px;
+}
+
+.option-stepper .stepper-inc .image {
+    color: #000080;
+}

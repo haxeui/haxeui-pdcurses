@@ -1,5 +1,6 @@
 .scroll {
     color: #000088;
+    border: none;
 }
 
 .scroll .button {
@@ -47,20 +48,24 @@
 *************************************************************************/
 .horizontal-scroll {
     height: 1px;
-    background-color: #888888;
-    color: #ffffff;
+    background-color: none;
+    color: #000080;
     padding: 0;
-    background-image: 'CKBOARD'
+    background-image: 'TEXTURE_MEDIUM';
 }
 
 .horizontal-scroll .thumb {
     width: 1px;
     height: 1px;
     border: none;
-    color: #888888;
+    color: #000080;
     padding: 0;
-    background-image: 'BLOCK'
+    background-image: 'BLOCK';
     filter: none;
+}
+
+.horizontal-scroll:active .thumb {
+    color: #0000ff;
 }
 
 .horizontal-scroll .deinc {
@@ -76,21 +81,26 @@
 *************************************************************************/
 .vertical-scroll {
     width: 1px;
-    background-color: #888888;
-    color: #ffffff;
+    background-color: none;
+    color: #000080;
     padding: 0;
-    background-image: 'CKBOARD'
+    background-image: 'TEXTURE_MEDIUM';
 }
 
 .vertical-scroll .thumb {
     width: 1px;
     height: 1px;
     border: none;
-    color: #888888;
+    color: #000080;
     padding: 0;
-    background-image: 'BLOCK'
+    background-image: 'BLOCK';
     filter: none;
 }
+
+.vertical-scroll:active .thumb {
+    color: #0000ff;
+}
+
 
 .vertical-scroll .deinc {
     icon: "UARROW";

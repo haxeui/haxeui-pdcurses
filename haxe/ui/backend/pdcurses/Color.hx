@@ -143,37 +143,6 @@ class Color {
             return -1;
         }
         return toANSI(getR(i), getG(i), getB(i));
-        
-        /*
-        var n = defaultColor;
-        switch (i) {
-            case 0x000000:  n = Color.BLACK;
-            case 0x880000:  n = Color.RED;
-            case 0x800000:  n = Color.RED;
-            case 0x008800:  n = Color.GREEN;
-            case 0x008000:  n = Color.GREEN;
-            case 0x888800:  n = Color.YELLOW;
-            case 0x808000:  n = Color.YELLOW;
-            case 0x000088:  n = Color.BLUE;
-            case 0x000080:  n = Color.BLUE;
-            case 0x880088:  n = Color.MAGENTA;
-            case 0x800080:  n = Color.MAGENTA;
-            case 0x008888:  n = Color.CYAN;
-            case 0x008080:  n = Color.CYAN;
-            case 0xC0C0C0:  n = Color.WHITE;
-            
-            case 0x888888:  n = Color.GREY;
-            case 0x808080:  n = Color.GREY;
-            case 0xFF0000:  n = Color.BRIGHT_RED;
-            case 0x00FF00:  n = Color.BRIGHT_GREEN;
-            case 0xFFFF00:  n = Color.BRIGHT_YELLOW;
-            case 0x0000FF:  n = Color.BRIGHT_BLUE;
-            case 0xFF00FF:  n = Color.BRIGHT_MAGENTA;
-            case 0x00FFFF:  n = Color.BRIGHT_CYAN;
-            case 0xFFFFFF:  n = Color.BRIGHT_WHITE;
-        }
-        return n;
-        */
     }
     
     public static function brighten(i:Int):Int {
@@ -210,11 +179,12 @@ class Color {
     public static function greyscale(i:Int):Int {
         var n = i;
         switch (i) {
-            case Color.BLUE: n = Color.WHITE;
-            case Color.GREEN: n = Color.WHITE;
-            case Color.RED: n = Color.WHITE;
-            case Color.BLACK: n = Color.GREY;
-            case Color.BRIGHT_BLUE: n = Color.WHITE;
+            case Color.BLUE: n = Color.GREY;
+            case Color.GREEN: n = Color.GREY;
+            case Color.RED: n = Color.GREY;
+            case Color.GREY: n = Color.WHITE;
+            case Color.BLACK: n = Color.BLACK;
+            case Color.BRIGHT_BLUE: n = Color.GREY;
             //case Color.BRIGHT_WHITE: n = Color.WHITE;
         }
         return n;

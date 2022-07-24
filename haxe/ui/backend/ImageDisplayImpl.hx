@@ -20,7 +20,7 @@ class ImageDisplayImpl extends ImageBase {
                     b = c;
                 }
                 var ch = data.char;
-                window.drawChar(px, py, f, b, ch);
+                window.drawChar(px, py, f, b, ch, false);
                 n++;
             }
         }

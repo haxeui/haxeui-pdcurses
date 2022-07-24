@@ -34,4 +34,8 @@ class AppImpl extends AppBase {
     public function trace(s:String) {
         _cursesApp.addLog(s);
     }
+    
+    public override function exit() {
+        _cursesApp.exit = true;
+    }
 }

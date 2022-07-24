@@ -1,0 +1,28 @@
+.horizontal-slider {
+    padding: 0;
+    initial-width: 20px;
+}
+
+.horizontal-slider .slider-value {
+    width: 100%;
+    height: 1px;
+    vertical-align: center;
+    cursor: pointer;
+    background-image: 'HLINE';
+    background-color: none;
+    padding: 0;
+}
+
+.horizontal-slider .range-value {
+    color: #000080;
+    background-image: 'HLINE';
+    background-color: none;
+}
+
+.horizontal-slider .button {
+    width: 1px;
+    height: 1px;
+    vertical-align: center;
+    filter: none;
+    border: none;
+}

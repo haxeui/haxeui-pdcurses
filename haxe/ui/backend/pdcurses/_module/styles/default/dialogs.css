@@ -17,10 +17,13 @@
     padding: 0px;
     filter: drop-shadow(1, 1, #888888);
     
-    border: 1px thin #000088;
+    border: 1px thin #000080;
+    border-top: 1px solid #000080;
+    border-bottom: 1px solid #000080;
     padding: 1px;
     filter: drop-shadow(.5, 1, #888888);
     padding-left: 0px;
+    padding-right: 0px;
 }
 
 .dialog-container {
@@ -33,20 +36,38 @@
     border: none;
     background-color: #000088;
     padding-bottom: 1px;
+    padding-right: 1px;
 }
 
 .dialog-title-label {
     color: white;
-    background-color: none;
     vertical-align: top;
+    padding: 0px;
+}
+
+.dialog-close-button {
+    __hidden: true;
+    width: 1px;
+    height: 1px;
+    color: white;
+    background-color: none;
+    __margin-top: -1px;
+    vertical-align: top;
+    background-image: 'X';
 }
 
 .dialog-content {
     padding: 0px;
     padding-left: 1px;
     border: none;
-    padding-right: 1px;
+    padding-right: 2px;
     padding-bottom: 1px;
+    padding-top: 1px;
+    background-color: white;
+}
+
+dialog.darker-dialog .dialog-content {
+    background-color: #c0c0c0;
 }
 
 .dialog-footer {
@@ -60,7 +81,7 @@
     background-color: #000088;
     border: none;
     padding-top: 0px;
-    padding-right: 1px;
+    padding-right: 2px;
     padding-bottom: 0px;
 }
 
@@ -72,6 +93,13 @@
     background-color: white;
     border: 1px thin white;
     color: #000088;
+    __filter: drop-shadow(.5, 1, #c0c0c0);
+}
+
+.dialog-footer-container .button:active {
+    background-color: #0000FF;
+    border-color: #0000FF;
+    color: white;
 }
 
 .modal-background {
@@ -80,5 +108,5 @@
 }
 
 .messagebox #messageLabel {
-    color: white;
+    __color: white;
 }
