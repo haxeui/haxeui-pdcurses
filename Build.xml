@@ -51,6 +51,20 @@
 
     <section if="linux">
         <files id="haxe">
+            <!--
+            sudo apt-get install libxmu-dev
+            sudo apt-get install libx11-dev
+            sudo apt-get install libxaw7-dev
+            
+            cd ${haxelib:haxeui-pdcurses}/lib/x11
+            
+            sudo chmod +x configure
+            ./configure
+            
+            sudo chmod +x make
+            ./make install
+            -->
+        
             <compilerflag value="-I${lib_folder}" />
             <compilerflag value="-I/usr/include/X11" />
 
@@ -93,7 +107,31 @@
         </files>
 
         <target id="haxe" tool="linker" toolid="exe">
+            <!--
+            <flag value="-L/usr/lib/x86_64-linux-gnu" />
+            <flag value="/usr/local/lib/libXCurses.a" />
+            <flag value="-lXaw" />
+            <flag value="-lXmu" />
+            <flag value="-lXt" />
             <flag value="-lX11" />
+            <flag value="-lXpm" />
+            <flag value="-lSM" />
+            <flag value="-lICE" />
+            <flag value="-lXext" />
+            -->
+            <flag value="-L/usr/local/lib" />
+            <flag value="-lXCurses" />
+            <!--
+            <flag value="-L/usr/lib/x86_64-linux-gnu" />
+            <flag value="-lXaw" />
+            <flag value="-lXmu" />
+            <flag value="-lXt" />
+            <flag value="-lX11" />
+            <flag value="-lXpm" />
+            <flag value="-lSM" />
+            <flag value="-lICE" />
+            <flag value="-lXext" />
+            -->
         </target>
     </section>
 </xml>
