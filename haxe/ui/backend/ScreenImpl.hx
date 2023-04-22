@@ -41,7 +41,7 @@ class ScreenImpl extends ScreenBase {
         if (component.percentHeight != null) {
             component.height = (component.percentHeight * height) / 100;
         }
-		return component;
+        return component;
     }
         
     //***********************************************************************************************************
